@@ -114,6 +114,17 @@ footer .spacer { margin-left: auto; }
   h1 { font-size: 36px; }
   .cards { grid-template-columns: 1fr; }
   .hero { padding-top: 56px; }
+  h2 { font-size: 25px; }
+  /* The nav crowded the name on a phone, and none of its links are worth
+     that. The page is short enough to scroll. */
+  .top nav { display: none; }
+  /* Five panes side by side are unreadable at 390px. Let the reader pan the
+     image instead of pretending it fits. */
+  .proofscroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .proofscroll img { width: 900px; max-width: none; }
+  .step { grid-template-columns: 30px 1fr; gap: 12px; padding: 18px 18px; }
+  footer .wrap { gap: 10px; }
+  footer .spacer { margin-left: 0; }
 }
 
 /* product page: the panel beside its explanation */
