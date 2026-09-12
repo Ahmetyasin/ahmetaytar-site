@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>whileAI — ask every AI at once</title>
+<meta name="description" content="A Chrome extension that sends one prompt to ChatGPT, Claude, Perplexity, Gemini and DeepSeek in your own tabs, and times every answer. Free. Nothing leaves your browser.">
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="img/icon.png">
+<meta property="og:title" content="whileAI — ask every AI at once">
+<meta property="og:description" content="One prompt, five AIs, your own accounts. Free, and nothing leaves your browser.">
+<meta property="og:image" content="https://ahmetaytar.com/whileai/img/proof.png">
+<meta property="og:url" content="https://ahmetaytar.com/whileai">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><img src="img/icon.png" alt="">Ahmet Aytar</a>
+  <nav><a href="#how">How it works</a><a href="#waiting">Waiting</a><a href="#help">Help</a></nav>
+</div></header>
+
+<div class="wrap">
+
+<section class="hero plain">
+  <div class="eyebrow">Chrome extension</div>
+  <h1>Ask one question. Get five answers.</h1>
+  <p class="lede">You already pay for more than one AI. Asking them the same
+  thing means typing it five times, in five tabs. whileAI does that part for
+  you, inside the sessions you are already signed in to.</p>
+  <div class="actions">
+    <a class="btn" href="https://chromewebstore.google.com/detail/jkemgnopkjenepaohooaghojmoabplmp">Add to Chrome</a>
+    <span class="note">Free. No account, no API keys, no limits.</span>
+  </div>
+</section>
+
+<figure>
+  <img src="img/proof.png" alt="Five AI panes side by side. The prompt was typed in ChatGPT; Claude, Perplexity, Gemini and DeepSeek each show the same question and their own answer." width="1200" height="660">
+  <figcaption>A real run, recorded. The question was typed once, in ChatGPT.
+  The other four received it on their own.</figcaption>
+</figure>
+
+<section id="how">
+  <h2>How it works</h2>
+  <p class="sub">Four steps, and you only do the first one.</p>
+
+  <div class="steps">
+    <div class="step"><b>01</b><div>
+      <h3>Sign in to the AIs you use</h3>
+      <p>Nothing to configure. whileAI uses the tabs and accounts you already
+      have, so it never asks for a password or an API key.</p>
+    </div></div>
+    <div class="step"><b>02</b><div>
+      <h3>Pick which ones get your prompts</h3>
+      <p>One switch per AI in the extension panel. An AI you leave off receives
+      nothing.</p>
+    </div></div>
+    <div class="step"><b>03</b><div>
+      <h3>Type your prompt, once</h3>
+      <p>Write it in whichever AI you were going to use anyway. The same text
+      goes to the others, each in its own tab, one at a time.</p>
+    </div></div>
+    <div class="step"><b>04</b><div>
+      <h3>Compare, and keep going</h3>
+      <p>Type the next prompt whenever you like. If an AI is still answering,
+      yours waits in the queue instead of colliding with it.</p>
+    </div></div>
+  </div>
+
+  <div class="panelrow">
+    <figure class="panelshot">
+      <img src="img/panel.png" alt="The whileAI panel showing ChatGPT, Claude, Perplexity, Gemini and DeepSeek, each marked ready with its own toggle, above the waiting time recorded so far." width="760" height="1180">
+    </figure>
+    <div class="panelcopy">
+      <h3>What the panel tells you</h3>
+      <p>"ready" means that tab is signed in and can receive a prompt. If a site
+      signs you out, the panel says so, so a prompt never disappears quietly.</p>
+      <p>Your waiting time so far sits at the top, and the full dashboard is one
+      click away.</p>
+    </div>
+  </div>
+</section>
+
+<section id="waiting">
+  <h2>It also times the waiting</h2>
+  <p class="sub">Every answer is timed, because waiting for AI is the part
+  nobody measures. It runs whether or not you use the broadcast.</p>
+
+  <figure>
+    <img src="img/dashboard.png" alt="The dashboard: total time waiting, answers counted, average wait, and a bar chart of waiting time per day split by AI." width="1200" height="560">
+    <figcaption>Your week, added up. The chart splits each day by AI.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="img/metrics.png" alt="A per-AI table of responses, total wait, typical wait, longest wait and how often the tab was left." width="1200" height="430">
+    <figcaption>Which AI is actually slower, per answer and in total.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="img/attention.png" alt="A summary of attention while waiting: times the tab was left, time spent on another tab, and answers waited out without leaving." width="1200" height="470">
+    <figcaption>And what the waiting does to your attention.</figcaption>
+  </figure>
+</section>
+
+<section id="promises">
+  <h2>What it will not do</h2>
+  <p class="sub">This matters more than any feature, so it is worth being exact.</p>
+
+  <div class="facts">
+    <div class="fact"><i>&#9679;</i><div><b>It does not read the answers.</b>
+      It watches whether one is still arriving, so it can time it. The text is
+      never stored or sent anywhere.</div></div>
+    <div class="fact"><i>&#9679;</i><div><b>It does not collect anything.</b>
+      No account, no analytics, no telemetry. Your prompts and timings stay in
+      your browser, and you can export or delete them.</div></div>
+    <div class="fact"><i>&#9679;</i><div><b>It does not bypass anything.</b>
+      No CAPTCHA solving, no working around a usage limit, no hidden sessions,
+      no pretending to be a different browser.</div></div>
+    <div class="fact"><i>&#9679;</i><div><b>It does not touch your password.</b>
+      You sign in yourself, in your own browser, as you already do.</div></div>
+    <div class="fact"><i>&#9679;</i><div><b>It stops and tells you.</b>
+      Signed out, rate limited, or a site is showing a verification check:
+      you hear about it rather than finding out an hour later.</div></div>
+  </div>
+</section>
+
+<section id="help">
+  <h2>Help</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Something is broken</h3>
+      <p>AI sites change their pages often. If a prompt stops arriving, email
+      me and it usually gets fixed the same week:
+      <a href="mailto:aytarahmetyasin@gmail.com">aytarahmetyasin@gmail.com</a></p>
+    </div>
+    <div class="card">
+      <h3>How much does it cost</h3>
+      <p>Nothing. Every feature is free, there is no trial, and there is no
+      paid tier waiting behind a switch.</p>
+    </div>
+    <div class="card">
+      <h3>Which AIs are supported</h3>
+      <p>ChatGPT, Claude, Perplexity, Gemini and DeepSeek. It only runs on
+      those five sites and asks for no other permissions.</p>
+    </div>
+    <div class="card">
+      <h3>Is the code open</h3>
+      <p>Yes. Read it, or check what it asks for, at
+      <a href="https://github.com/Ahmetyasin/WhileAI">github.com/Ahmetyasin/WhileAI</a>.</p>
+    </div>
+  </div>
+
+  <div class="actions" style="margin-top:34px">
+    <a class="btn" href="https://chromewebstore.google.com/detail/jkemgnopkjenepaohooaghojmoabplmp">Add to Chrome</a>
+    <a class="btn ghost" href="privacy/">Privacy policy</a>
+  </div>
+</section>
+
+</div>
+
+<footer><div class="wrap">
+  <span>&copy; 2026 Ahmet Aytar</span>
+  <a href="/">Home</a>
+  <a href="privacy/">Privacy</a>
+  <a href="https://github.com/Ahmetyasin/WhileAI">Source</a>
+  <span class="spacer">Not affiliated with OpenAI, Anthropic, Perplexity, Google or DeepSeek.</span>
+</div></footer>
+
+</body>
+</html>
