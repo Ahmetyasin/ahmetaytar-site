@@ -1,0 +1,233 @@
+{
+  "version": 17,
+  "updated": "2026-09-12",
+  "platforms": {
+    "perplexity": {
+      "streamingSelector": null,
+      "stopButtonSelectors": [
+        "button[data-testid=\"stop-button\"]",
+        "button[aria-label^=\"Stop response\"]",
+        "button[aria-label=\"Stop generating response\"]",
+        "button[aria-label*=\"Stop\"]"
+      ],
+      "sendButtonSelectors": [
+        "button[aria-label=\"Submit\"]",
+        "button[data-testid=\"submit-button\"]",
+        "button[aria-label*=\"Submit\"]"
+      ],
+      "composerSelectors": [
+        "#ask-input",
+        "main div[contenteditable=\"true\"]"
+      ],
+      "thinkingSelector": null,
+      "modelSelectors": [],
+      "endpointPatterns": [
+        "/rest/sse/perplexity_ask"
+      ],
+      "userMessageSelectors": [
+        "[data-testid=\"user-query\"]",
+        ".whitespace-pre-line"
+      ],
+      "loginUrlPatterns": [
+        "/sign-in",
+        "/login"
+      ],
+      "challengeSelectors": [
+        "#challenge-running",
+        ".cf-turnstile",
+        "#cf-challenge-running"
+      ],
+      "newChatUrl": "https://www.perplexity.ai/",
+      "answerSelectors": [
+        ".prose",
+        "[id^=\"markdown-content\"]"
+      ]
+    },
+    "chatgpt": {
+      "streamingSelector": null,
+      "stopButtonSelectors": [
+        "[data-testid=\"stop-button\"]",
+        "#composer-submit-button[aria-label*=\"Stop\"]",
+        "button[aria-label=\"Stop streaming\"]",
+        "button[aria-label=\"Stop generating\"]",
+        "button[aria-label=\"Stop response\"]",
+        "button[aria-label*=\"Stop\"]"
+      ],
+      "sendButtonSelectors": [
+        "[data-testid=\"send-button\"]",
+        "[data-testid=\"composer-send-button\"]",
+        "#composer-submit-button",
+        "button[data-testid=\"composer-speech-button\"]",
+        "button[aria-label=\"Send prompt\"]",
+        "button[aria-label=\"Send message\"]",
+        "main form button[type=\"submit\"]"
+      ],
+      "composerSelectors": [
+        "#prompt-textarea",
+        "form [contenteditable=\"true\"]",
+        "main textarea",
+        "textarea[name=\"prompt\"]"
+      ],
+      "thinkingSelector": "[data-testid=\"thinking-indicator\"]",
+      "modelSelectors": [
+        "[data-testid=\"model-switcher-dropdown-button\"]",
+        "button[aria-label*=\"Model selector\"]"
+      ],
+      "endpointPatterns": [
+        "/backend-(api|alt)/(f/)?conversation(\\?|$)"
+      ],
+      "userMessageSelectors": [
+        "[data-message-author-role=\"user\"]"
+      ],
+      "loginUrlPatterns": [
+        "auth.openai.com",
+        "/auth/login",
+        "/login"
+      ],
+      "challengeSelectors": [
+        "#challenge-running",
+        ".cf-turnstile",
+        "#cf-challenge-running"
+      ],
+      "newChatUrl": "https://chatgpt.com/",
+      "answerSelectors": [
+        "[data-message-author-role=\"assistant\"]",
+        ".markdown"
+      ]
+    },
+    "claude": {
+      "streamingSelector": "[data-is-streaming=\"true\"]",
+      "stopButtonSelectors": [
+        "[data-testid=\"stop-button\"]",
+        "button[data-state=\"open\"][aria-label*=\"top\"]",
+        "fieldset button[type=\"submit\"][aria-busy=\"true\"]",
+        "button[aria-label=\"Stop response\"]",
+        "button[aria-label=\"Stop Response\"]"
+      ],
+      "sendButtonSelectors": [
+        "[data-testid=\"chat-input-send\"]",
+        "[data-testid=\"send-button\"]",
+        "fieldset button[type=\"submit\"]",
+        "button[aria-label=\"Send message\"]",
+        "button[aria-label=\"Send Message\"]",
+        "button[aria-label*=\"Send\"]"
+      ],
+      "composerSelectors": [
+        "div.ProseMirror[contenteditable=\"true\"]",
+        "fieldset div[contenteditable=\"true\"]",
+        "[enterkeyhint] div[contenteditable=\"true\"]",
+        "div[contenteditable=\"true\"]"
+      ],
+      "thinkingSelector": "[data-testid=\"thinking-indicator\"]",
+      "modelSelectors": [
+        "[data-testid=\"model-selector-dropdown\"]",
+        "button[data-testid=\"model-selector\"]"
+      ],
+      "endpointPatterns": [
+        "/completion(\\?|$)",
+        "/retry_completion(\\?|$)"
+      ],
+      "userMessageSelectors": [
+        "[data-testid=\"user-message\"]"
+      ],
+      "loginUrlPatterns": [
+        "/login",
+        "/magic-link"
+      ],
+      "challengeSelectors": [
+        "#challenge-running",
+        ".cf-turnstile",
+        "#cf-challenge-running"
+      ],
+      "newChatUrl": "https://claude.ai/new",
+      "answerSelectors": [
+        "[data-is-streaming]",
+        ".font-claude-response",
+        ".standard-markdown"
+      ]
+    },
+    "gemini": {
+      "streamingSelector": null,
+      "stopButtonSelectors": [
+        "button:has(mat-icon[fonticon=\"stop\"])",
+        "button[aria-label*=\"Stop\"]",
+        "button.stop-icon"
+      ],
+      "sendButtonSelectors": [
+        "button:has(mat-icon[fonticon=\"arrow_upward\"])",
+        "button[aria-label=\"Send message\"]",
+        "button[aria-label=\"Mesaj gönder\"]",
+        "button[aria-label*=\"Send\"]",
+        "button[aria-label*=\"gönder\"]",
+        "button.send-button"
+      ],
+      "composerSelectors": [
+        "rich-textarea .ql-editor",
+        "div[contenteditable=\"true\"]"
+      ],
+      "thinkingSelector": null,
+      "modelSelectors": [],
+      "endpointPatterns": [
+        "/StreamGenerate",
+        "/BardChatUi"
+      ],
+      "userMessageSelectors": [
+        ".query-text-line",
+        "user-query",
+        ".query-text"
+      ],
+      "loginUrlPatterns": [
+        "accounts.google.com",
+        "/ServiceLogin"
+      ],
+      "challengeSelectors": [
+        "#challenge-running",
+        ".cf-turnstile"
+      ],
+      "newChatUrl": "https://gemini.google.com/app",
+      "answerSelectors": [
+        ".side-by-side",
+        "model-response",
+        ".model-response-text"
+      ]
+    },
+    "deepseek": {
+      "streamingSelector": null,
+      "stopButtonSelectors": [
+        "div[role=\"button\"].ds-button--primary:not(.ds-button--disabled):has(svg rect)",
+        "div[role=\"button\"][aria-label*=\"Stop\"]",
+        "button[aria-label*=\"Stop\"]"
+      ],
+      "sendButtonSelectors": [
+        "div[role=\"button\"].ds-button--primary",
+        "div[role=\"button\"][aria-label*=\"Send\"]",
+        "button[type=\"submit\"]"
+      ],
+      "composerSelectors": [
+        "textarea[name=\"search\"]",
+        "textarea"
+      ],
+      "thinkingSelector": null,
+      "modelSelectors": [],
+      "endpointPatterns": [
+        "/api/v0/chat/completion"
+      ],
+      "userMessageSelectors": [
+        "[data-virtual-list-item-key^=\"-\"] .ds-message:has(.ds-collapsible-text)",
+        ".ds-message:has(.ds-collapsible-text)"
+      ],
+      "loginUrlPatterns": [
+        "/sign_in",
+        "/login"
+      ],
+      "challengeSelectors": [
+        "#challenge-running",
+        ".cf-turnstile"
+      ],
+      "newChatUrl": "https://chat.deepseek.com/",
+      "answerSelectors": [
+        ".ds-markdown"
+      ]
+    }
+  }
+}
