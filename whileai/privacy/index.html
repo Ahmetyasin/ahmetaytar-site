@@ -18,12 +18,12 @@
 <div class="wrap prose">
 
   <h1 style="font-size:38px">Privacy policy</h1>
-  <p class="updated">whileAI browser extension. Last updated 12 September 2026.</p>
+  <p class="updated">whileAI browser extension. Last updated 17 September 2026.</p>
 
   <p style="margin-top:22px">whileAI never reads the AI's answers. Your prompts
-  and timings stay in your browser. There is no account, no analytics, and no
-  telemetry. Two network requests exist and neither carries your data. Both are
-  described below.</p>
+  and timings stay in your browser. There is no account and no analytics.
+  Three kinds of network request exist and none carries anything about you.
+  All three are described below, with their exact fields.</p>
 
   <h2>What is stored, and where</h2>
   <p>Everything stays on your own machine, in the browser's extension storage
@@ -50,16 +50,31 @@
     <li>Never sends your prompts, the AI's answers, or your browsing anywhere.</li>
   </ul>
 
-  <h2>The two times whileAI uses the network</h2>
-  <p>Both are listed here rather than buried, because "no server at all" would
-  not be strictly true, and a privacy policy that overstates itself is worse
-  than one that explains itself.</p>
+  <h2>The three times whileAI uses the network</h2>
+  <p>All three are listed here rather than buried, because "no server at all"
+  would not be strictly true, and a privacy policy that overstates itself is
+  worse than one that explains itself.</p>
   <ul>
     <li><strong>Selector updates.</strong> Every few hours whileAI fetches a
     small public file describing where the send button and message box are on
     each AI site. These sites change often, and this is what lets a fix reach
     you without waiting for a store update. It is a plain download of a public
     file: no identifier, no prompt, nothing about you.</li>
+    <li><strong>A breakage signal, when a site changes (since 0.9.0).</strong>
+    The AI sites redesign their pages without warning, and then whileAI can
+    no longer find the message box or the send button. When its own check
+    sees that, it sends <strong>one message a day per site</strong> to
+    <code>ahmetaytar.com/whileai/health/ping</code> containing exactly: the
+    site's name (for example <code>deepseek</code>), which part broke
+    (<code>composer</code>, <code>sendButton</code>, <code>userMessage</code>,
+    <code>answer</code>), which backup selector is in use if any (a CSS
+    selector from the public definition file, never text from the page), the
+    definition version and the extension version. Never a prompt, an answer,
+    a page URL or title, an account, a cookie, or any identifier. Sent without
+    credentials; the reply is ignored. It exists so a fix can be written
+    before you have to report the problem. Kept on this site for 14 days as
+    per-site, per-day counts. <strong>You can turn it off</strong> in the
+    extension's dashboard: Data → "Report when a site changes".</li>
     <li><strong>Activating a licence, once.</strong> whileAI is free and has no
     paid tier today, so this does not currently happen. It is described because
     the capability exists: if a paid tier is ever added, a licence key would be
