@@ -1,6 +1,6 @@
 {
-  "version": 17,
-  "updated": "2026-09-12",
+  "version": 18,
+  "updated": "2026-09-17",
   "platforms": {
     "perplexity": {
       "streamingSelector": null,
@@ -186,8 +186,8 @@
       ],
       "newChatUrl": "https://gemini.google.com/app",
       "answerSelectors": [
-        ".side-by-side",
         "model-response",
+        ".side-by-side",
         ".model-response-text"
       ]
     },
