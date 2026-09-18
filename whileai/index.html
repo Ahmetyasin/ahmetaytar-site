@@ -88,10 +88,10 @@
   your real work, and get called back when the answer lands.</p>
 
   <figure>
-    <img src="img/notify.png" alt="The Answers ready list in the WhileAI popup: Claude has answered, ready after 48 seconds; Gemini has answered; ChatGPT has answered. Beside it, the toolbar icon with a green 3 and an optional desktop notification." width="1200" height="470">
+    <img src="img/notify.png" alt="The Answers ready list in the WhileAI popup: Claude has answered, ready after 48 seconds; Gemini has answered; ChatGPT has answered. Beside it, the toolbar icon with a green 3." width="1200" height="470">
     <figcaption>Each answer that lands while you are elsewhere is listed at the bottom
     of the popup, and counted on the toolbar icon. Click one and you are in that
-    conversation. A short chime and a desktop notification are optional switches.
+    conversation. A short chime for each answer is an optional switch.
     Nothing is listed for an answer you were already looking at.</figcaption>
   </figure>
 </section>
@@ -185,9 +185,9 @@
     <details><summary>Does it work when the AI tab is in the background, or in another window?</summary>
       <p>Yes, that is the normal case. Your prompt is delivered to tabs you are not looking at, and the answers-ready list tells you when each one has answered. Chrome slows background tabs down a great deal; WhileAI times its own steps on a clock Chrome does not slow, so a tab you have not touched for an hour still receives the prompt straight away.</p></details>
     <details><summary>How do I find out that an answer is ready?</summary>
-      <p>Three ways, and only the first is always on. The WhileAI popup has an <b>Answers ready</b> list at the bottom: one line per answer that landed while you were not looking at that tab, naming the AI and how long it took. Click a line and you are in that conversation, and the line goes away. The toolbar icon shows the same count in green. If you want more, the dashboard has a switch for a short chime that plays once per answer, and one for a desktop notification. There is a "Send a test" button next to them, so you can check that your computer lets Chrome make a sound and show notifications.</p></details>
+      <p>The WhileAI popup has an <b>Answers ready</b> list at the bottom: one line per answer that landed while you were not looking at that tab, naming the AI and how long it took. Click a line and you are in that conversation, and the line goes away. The toolbar icon shows the same count in green. If you also want to hear it, the dashboard has a switch for a short chime that plays once per answer, with a "Test the chime" button next to it.</p></details>
     <details><summary>DeepSeek has "DeepThink" and "Search" switched on. Does my prompt go out in those modes?</summary>
-      <p>No. DeepSeek remembers those two buttons from your last visit, and a slow thinking mode is rarely what you want when the same prompt is going to several AIs. Before WhileAI sends a prompt there on your behalf it switches both off, the same click you would make, so the prompt goes out in the standard mode. It only does this on prompts it delivers, never while you are typing yourself. If you want the modes left alone, untick "Send in each AI's standard mode" in the popup.</p></details>
+      <p>No. DeepSeek remembers those two buttons from your last visit, and a slow thinking mode is rarely what you want when the same prompt is going to several AIs. Before WhileAI types a prompt there on your behalf it switches both off, the same click you would make, so the prompt goes out in the standard mode. It only does this on prompts it delivers, never while you are typing in DeepSeek yourself.</p></details>
     <details><summary>Will it send my prompt to an AI I switched off?</summary>
       <p>No. There is one switch per AI and an AI that is off receives nothing. Closing an AI's tab switches it off too. On the free plan a prompt reaches two other AIs at a time; if you switched on more, a notice tells you by name which ones were left out.</p></details>
     <details><summary>What do writing, waiting and reading time mean, and how can it know?</summary>
