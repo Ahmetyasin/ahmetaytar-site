@@ -1,6 +1,6 @@
 {
-  "version": 17,
-  "updated": "2026-09-12",
+  "version": 18,
+  "updated": "2026-09-18",
   "platforms": {
     "perplexity": {
       "streamingSelector": null,
@@ -25,8 +25,8 @@
         "/rest/sse/perplexity_ask"
       ],
       "userMessageSelectors": [
-        "[data-testid=\"user-query\"]",
-        ".whitespace-pre-line"
+        ".whitespace-pre-line",
+        "[data-testid=\"user-query\"]"
       ],
       "loginUrlPatterns": [
         "/sign-in",
@@ -186,8 +186,8 @@
       ],
       "newChatUrl": "https://gemini.google.com/app",
       "answerSelectors": [
-        ".side-by-side",
         "model-response",
+        ".side-by-side",
         ".model-response-text"
       ]
     },
