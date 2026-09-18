@@ -1,5 +1,5 @@
 {
-  "version": 19,
+  "version": 20,
   "updated": "2026-09-18",
   "platforms": {
     "perplexity": {
@@ -215,7 +215,6 @@
         "/api/v0/chat/completion"
       ],
       "userMessageSelectors": [
-        "[data-virtual-list-item-key^=\"-\"] .ds-message:has(.ds-collapsible-text)",
         ".ds-message:has(.ds-collapsible-text)"
       ],
       "loginUrlPatterns": [
@@ -229,6 +228,9 @@
       "newChatUrl": "https://chat.deepseek.com/",
       "answerSelectors": [
         ".ds-markdown"
+      ],
+      "modeResetSelectors": [
+        ".ds-toggle-button.ds-toggle-button--selected"
       ]
     }
   }
