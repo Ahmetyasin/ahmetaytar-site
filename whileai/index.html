@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>whileAI — ask every AI at once</title>
-<meta name="description" content="A Chrome extension that sends one prompt to ChatGPT, Claude, Perplexity, Gemini and DeepSeek in your own tabs, and times every answer. Free. Nothing leaves your browser.">
+<title>WhileAI: ask ChatGPT, Claude and Gemini at once, and track your AI time</title>
+<meta name="description" content="A Chrome extension that sends one prompt to ChatGPT, Claude, Gemini, Perplexity and DeepSeek in your own tabs, tells you when the answers land, and shows where your AI time goes. Free to use. Nothing leaves your browser.">
 <link rel="stylesheet" href="../style.css">
 <link rel="icon" href="img/icon.png">
-<meta property="og:title" content="whileAI — ask every AI at once">
-<meta property="og:description" content="One prompt, five AIs, your own accounts. Free, and nothing leaves your browser.">
+<link rel="canonical" href="https://ahmetaytar.com/whileai/">
+<meta property="og:title" content="WhileAI: one prompt, several AIs, your own tabs">
+<meta property="og:description" content="Type a prompt once. ChatGPT, Claude, Gemini, Perplexity and DeepSeek answer in your own tabs, and you get told when they are done.">
 <meta property="og:image" content="https://ahmetaytar.com/whileai/img/proof.png">
 <meta property="og:url" content="https://ahmetaytar.com/whileai">
 <meta name="twitter:card" content="summary_large_image">
@@ -17,7 +18,7 @@
 
 <header class="top"><div class="wrap">
   <a class="brand" href="/"><img src="img/icon.png" alt="">Ahmet Aytar</a>
-  <nav><a href="#how">How it works</a><a href="#waiting">Waiting</a><a href="#help">Help</a></nav>
+  <nav><a href="#how">How it works</a><a href="#time">Your AI time</a><a href="#pricing">Pricing</a><a href="#help">Help</a></nav>
 </div></header>
 
 <div class="wrap">
@@ -30,7 +31,7 @@
   you, inside the sessions you are already signed in to.</p>
   <div class="actions">
     <a class="btn" href="https://chromewebstore.google.com/detail/jkemgnopkjenepaohooaghojmoabplmp">Add to Chrome</a>
-    <span class="note">Free. No account, no API keys, no limits.</span>
+    <span class="note">Free to use. No account, no API keys. <a href="upgrade/">Pro</a> adds the analysis.</span>
   </div>
 </section>
 
@@ -69,37 +70,77 @@
 
   <div class="panelrow">
     <figure class="panelshot">
-      <img src="img/panel.png" alt="The whileAI panel showing ChatGPT, Claude, Perplexity, Gemini and DeepSeek, each marked ready with its own toggle, above the waiting time recorded so far." width="760" height="1180">
+      <img src="img/panel.png" alt="The whileAI panel showing ChatGPT, Claude, Perplexity, Gemini and DeepSeek, each marked ready with its own toggle, above the waiting time recorded so far." width="760" height="1267">
     </figure>
     <div class="panelcopy">
       <h3>What the panel tells you</h3>
       <p>"ready" means that tab is signed in and can receive a prompt. If a site
       signs you out, the panel says so, so a prompt never disappears quietly.</p>
-      <p>Your waiting time so far sits at the top, and the full dashboard is one
-      click away.</p>
+      <p>Your plan shows in the corner, your waiting time so far sits at the
+      top, and the full dashboard is one click away.</p>
     </div>
   </div>
 </section>
 
-<section id="waiting">
-  <h2>It also times the waiting</h2>
-  <p class="sub">Every answer is timed, because waiting for AI is the part
-  nobody measures. It runs whether or not you use the broadcast.</p>
+<section id="notify">
+  <h2>Then go and do something else</h2>
+  <p class="sub">That is where the name comes from. Start a prompt, switch to
+  your real work, and get a notification when the answer lands.</p>
 
   <figure>
-    <img src="img/dashboard.png" alt="The dashboard: total time waiting, answers counted, average wait, and a bar chart of waiting time per day split by AI." width="1200" height="560">
-    <figcaption>Your week, added up. The chart splits each day by AI.</figcaption>
+    <img src="img/notify.png" alt="Three notifications stacked: Claude has answered, ready after 48 seconds; Gemini has answered; ChatGPT has answered." width="1200" height="420">
+    <figcaption>The notification names the AI and takes you to that conversation.
+    It stays quiet if you never left the tab, or if the answer took a few seconds.</figcaption>
+  </figure>
+</section>
+
+<section id="time">
+  <h2>Where does your AI time actually go?</h2>
+  <p class="sub">Every minute in an AI tab is one of three things: writing the
+  prompt, waiting for the answer, or reading it. WhileAI measures all three,
+  from timing alone. It never reads what you type or what the AI writes.</p>
+
+  <figure>
+    <img src="img/dashboard.png" alt="The dashboard: a bar split into writing, waiting and reading time, above totals for time with AI, time spent waiting, answers received and typical wait." width="1200" height="661">
+    <figcaption>Most people expect waiting to be the biggest slice. It almost never is.</figcaption>
   </figure>
 
   <figure>
-    <img src="img/metrics.png" alt="A per-AI table of responses, total wait, typical wait, longest wait and how often the tab was left." width="1200" height="430">
-    <figcaption>Which AI is actually slower, per answer and in total.</figcaption>
+    <img src="img/daily.png" alt="A bar chart of waiting time per day, coloured by AI, above a table of answers, waiting time and total time for each AI." width="1200" height="747">
+    <figcaption>Day by day, and AI by AI. This much is free, for the last 7 days.</figcaption>
   </figure>
+</section>
+
+<section id="pricing">
+  <h2>Free to use. Pro for the analysis.</h2>
+  <p class="sub">Sending prompts, the queue, the notification and the basic
+  dashboard are free, with no time limit and no cap on prompts. The free plan
+  sends each prompt to two AIs at a time.</p>
 
   <figure>
-    <img src="img/attention.png" alt="A summary of attention while waiting: times the tab was left, time spent on another tab, and answers waited out without leaving." width="1200" height="470">
-    <figcaption>And what the waiting does to your attention.</figcaption>
+    <img src="img/pro.png" alt="The Pro subscription panel: four AI subscriptions at 20 dollars each with cost per prompt and per hour of use, and a line saying Perplexity costs 20 dollars a month and was sent 2 prompts." width="1200" height="468">
+    <figcaption>Pro answers the question that pays for it: which subscription are you not using?</figcaption>
   </figure>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Free</h3>
+      <p>Unlimited prompts to two AIs at a time. Queue, a switch per AI,
+      answer-ready notifications, the last 7 days of your dashboard, shareable
+      summary cards, JSON export and delete.</p>
+    </div>
+    <div class="card">
+      <h3>Pro: $5 a month, $39 a year, or $49 once</h3>
+      <p>All five AIs at once, your full history, what each subscription costs
+      you per prompt, which AI answers first, a weekly report and your own
+      notification rules. Every install starts with 14 days of Pro, no card.</p>
+    </div>
+  </div>
+
+  <div class="actions" style="margin-top:26px">
+    <a class="btn" href="upgrade/">See Pro</a>
+    <span class="note">Nothing is deleted to enforce the free plan. Upgrade and your whole history is there.</span>
+  </div>
 </section>
 
 <section id="promises">
@@ -110,9 +151,10 @@
     <div class="fact"><i>&#9679;</i><div><b>It does not read the answers.</b>
       It watches whether one is still arriving, so it can time it. The text is
       never stored or sent anywhere.</div></div>
-    <div class="fact"><i>&#9679;</i><div><b>It does not collect anything.</b>
-      No account, no analytics, no telemetry. Your prompts and timings stay in
-      your browser, and you can export or delete them.</div></div>
+    <div class="fact"><i>&#9679;</i><div><b>It does not collect anything about you.</b>
+      No account and no analytics. Your prompts and timings stay in your
+      browser, and you can export or delete them. The few network requests it
+      does make are listed on the <a href="privacy/">privacy page</a>.</div></div>
     <div class="fact"><i>&#9679;</i><div><b>It does not bypass anything.</b>
       No CAPTCHA solving, no working around a usage limit, no hidden sessions,
       no pretending to be a different browser.</div></div>
@@ -135,8 +177,9 @@
     </div>
     <div class="card">
       <h3>How much does it cost</h3>
-      <p>Nothing. Every feature is free, there is no trial, and there is no
-      paid tier waiting behind a switch.</p>
+      <p>Using it is free: unlimited prompts to two AIs at a time, with the
+      notification and the 7-day dashboard. <a href="upgrade/">Pro</a> is $5 a
+      month, $39 a year or $49 once, and adds all five AIs and the analysis.</p>
     </div>
     <div class="card">
       <h3>Which AIs are supported</h3>
@@ -145,7 +188,7 @@
     </div>
     <div class="card">
       <h3>What it asks for</h3>
-      <p>Seven Chrome permissions and access to the five AI sites only, no
+      <p>Eight Chrome permissions and access to the five AI sites only, no
       "all sites" access. Each one is explained on the
       <a href="privacy/">privacy page</a>.</p>
     </div>
@@ -162,6 +205,9 @@
 <footer><div class="wrap">
   <span>&copy; 2026 Ahmet Aytar</span>
   <a href="/">Home</a>
+  <a href="upgrade/">Pricing</a>
+  <a href="terms/">Terms of sale</a>
+  <a href="refund/">Refunds</a>
   <a href="privacy/">Privacy</a>
   <span class="spacer">Not affiliated with OpenAI, Anthropic, Perplexity, Google or DeepSeek.</span>
 </div></footer>

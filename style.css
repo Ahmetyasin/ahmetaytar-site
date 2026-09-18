@@ -133,3 +133,48 @@ footer .spacer { margin-left: auto; }
 .panelrow .panelshot img { border-radius: 12px; }
 .panelcopy p { color: var(--muted); font-size: 16.5px; margin-top: 10px; }
 @media (max-width: 720px) { .panelrow { grid-template-columns: 1fr; } }
+
+/* pricing (whileai/upgrade) */
+.plans { margin-top: 34px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: stretch; }
+.plan { background: var(--raise); border: 1px solid var(--line); border-radius: 14px; padding: 26px 24px 24px;
+        display: flex; flex-direction: column; }
+.plan.best { border-color: var(--accent); }
+.plan .tag { font-size: 12px; font-weight: 650; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
+.plan.best .tag { color: var(--accent); }
+.plan .amount { margin-top: 14px; font-size: 44px; font-weight: 700; letter-spacing: -.03em; line-height: 1; }
+.plan .amount small { font-size: 16px; font-weight: 500; color: var(--muted); letter-spacing: 0; margin-left: 4px; }
+.plan .was { margin-top: 8px; font-size: 14.5px; color: var(--dim); min-height: 22px; }
+.plan p { margin-top: 14px; color: var(--muted); font-size: 15.5px; flex: 1; }
+.plan .btn { margin-top: 22px; text-align: center; }
+.plan .btn.off { background: transparent; color: var(--dim); border: 1px dashed var(--line); cursor: default; }
+.fine { margin-top: 18px; font-size: 14.5px; color: var(--dim); max-width: 70ch; }
+
+.compare { margin-top: 30px; width: 100%; border-collapse: collapse; font-size: 16px; }
+.compare th, .compare td { text-align: left; padding: 13px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.compare th { font-size: 12.5px; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
+.compare td:nth-child(2), .compare td:nth-child(3), .compare th:nth-child(2), .compare th:nth-child(3) { width: 120px; text-align: center; }
+.compare td { color: var(--muted); }
+.compare td:first-child { color: var(--text); }
+.compare td span { display: block; font-size: 14.5px; color: var(--dim); margin-top: 2px; }
+.compare .yes { color: var(--accent); font-weight: 650; }
+.compare .no { color: #4A463F; }
+
+.faq { margin-top: 26px; display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line);
+       border-radius: 12px; overflow: hidden; }
+.faq details { background: var(--raise); padding: 18px 22px; }
+.faq summary { cursor: pointer; font-weight: 600; font-size: 16.5px; list-style: none; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; float: right; color: var(--dim); font-weight: 400; }
+.faq details[open] summary::after { content: "\2212"; }
+.faq p { margin-top: 10px; color: var(--muted); font-size: 16px; }
+
+.keysteps { margin-top: 26px; counter-reset: k; display: grid; gap: 12px; }
+.keysteps div { display: grid; grid-template-columns: 30px 1fr; gap: 12px; color: var(--muted); font-size: 16.5px; }
+.keysteps div::before { counter-increment: k; content: counter(k); color: var(--accent); font-weight: 700; font-size: 14px; padding-top: 3px; }
+.keysteps b { color: var(--text); font-weight: 600; }
+
+@media (max-width: 720px) {
+  .plans { grid-template-columns: 1fr; }
+  .compare td:nth-child(2), .compare td:nth-child(3), .compare th:nth-child(2), .compare th:nth-child(3) { width: 64px; }
+  .compare th, .compare td { padding: 12px 8px; font-size: 15px; }
+}

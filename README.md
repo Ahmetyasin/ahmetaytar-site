@@ -8,7 +8,11 @@ change.
 index.html              studio page, lists the projects
 style.css               the only stylesheet, shared by every page
 whileai/index.html      the whileAI product page
+whileai/upgrade/        WhileAI Pro pricing; checkout.js holds the three Polar checkout links
+whileai/terms/          terms of sale (the store requires these once anything is sold)
+whileai/refund/         refund policy
 whileai/privacy/        privacy policy for the extension (linked from the store listing)
+whileai/selectors.json  the selector config every install polls; bump `version` or nothing changes
 whileai/img/            product images, generated, do not edit by hand
 ```
 
@@ -19,6 +23,7 @@ site change without anyone retouching a screenshot:
 
 ```bash
 cd ../WhileAI/whileai
+npm run build && node scripts/seed-demo-data.mjs && node scripts/capture-ui.mjs
 node scripts/make-site-images.mjs        # writes into ../../ahmetaytar-site/whileai/img
 ```
 
