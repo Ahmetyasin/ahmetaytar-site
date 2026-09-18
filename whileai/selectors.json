@@ -1,6 +1,6 @@
 {
-  "version": 18,
-  "updated": "2026-09-12",
+  "version": 19,
+  "updated": "2026-09-18",
   "platforms": {
     "perplexity": {
       "streamingSelector": null,
@@ -195,6 +195,7 @@
     "deepseek": {
       "streamingSelector": null,
       "stopButtonSelectors": [
+        "div[role=\"button\"].ds-button--primary:not(.ds-button--disabled):has(svg path[d^=\"M2 4.88\"])",
         "div[role=\"button\"].ds-button--primary:not(.ds-button--disabled):has(svg rect)",
         "div[role=\"button\"][aria-label*=\"Stop\"]",
         "button[aria-label*=\"Stop\"]"
