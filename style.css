@@ -52,6 +52,8 @@ h1 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui
 /* sections */
 section { padding: 64px 0; border-top: 1px solid var(--line); }
 section.plain { border-top: 0; }
+/* A deep link lands the heading clear of the sticky header, not under its edge. */
+section[id] { scroll-margin-top: 24px; }
 h2 { font-size: 30px; letter-spacing: -.024em; font-weight: 660; line-height: 1.15; }
 h2 + .sub { margin-top: 11px; color: var(--muted); font-size: 17.5px; max-width: 58ch; }
 h3 { font-size: 18px; font-weight: 620; letter-spacing: -.012em; margin-bottom: 6px; }

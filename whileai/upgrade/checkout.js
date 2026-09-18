@@ -5,7 +5,7 @@
 //
 // Polar dashboard → Products → (product) → Checkout Links → copy.
 window.WHILEAI_CHECKOUT = {
-  monthly: '',
-  yearly: '',
-  lifetime: '',
+  monthly: 'https://buy.polar.sh/polar_cl_XHbrVzkxSB9ywcxQP1y2YFRyGyNohLrD84myX4e9ed2',
+  yearly: 'https://buy.polar.sh/polar_cl_JBN6p4bDyRhRs8rvf8g9W4t2X5dxbUpkTxDLi3cyRpG',
+  lifetime: 'https://buy.polar.sh/polar_cl_F79Ts25z8MMAhv1UoaIyxK9IoBc6ksXhtJDBv104hpA',
 };

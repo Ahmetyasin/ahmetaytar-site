@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WhileAI: ask ChatGPT, Claude and Gemini at once, and track your AI time</title>
-<meta name="description" content="A Chrome extension that sends one prompt to ChatGPT, Claude, Gemini, Perplexity and DeepSeek in your own tabs, tells you when the answers land, and shows where your AI time goes. Free to use. Nothing leaves your browser.">
+<title>WhileAI: ask ChatGPT, Claude and Gemini at once</title>
+<meta name="description" content="Send one prompt to ChatGPT, Claude, Gemini, Perplexity and DeepSeek in your own tabs. Get told when answers land. See where your AI time goes.">
 <link rel="stylesheet" href="../style.css">
 <link rel="icon" href="img/icon.png">
 <link rel="canonical" href="https://ahmetaytar.com/whileai/">
@@ -18,7 +18,7 @@
 
 <header class="top"><div class="wrap">
   <a class="brand" href="/"><img src="img/icon.png" alt="">Ahmet Aytar</a>
-  <nav><a href="#how">How it works</a><a href="#time">Your AI time</a><a href="#pricing">Pricing</a><a href="#help">Help</a></nav>
+  <nav><a href="#how">How it works</a><a href="#time">Your AI time</a><a href="#pricing">Pricing</a><a href="#help">Questions</a></nav>
 </div></header>
 
 <div class="wrap">
@@ -70,14 +70,14 @@
 
   <div class="panelrow">
     <figure class="panelshot">
-      <img src="img/panel.png" alt="The whileAI panel showing ChatGPT, Claude, Perplexity, Gemini and DeepSeek, each marked ready with its own toggle, above the waiting time recorded so far." width="760" height="1267">
+      <img src="img/panel.png" alt="The whileAI panel showing ChatGPT, Claude, Perplexity, Gemini and DeepSeek, each marked ready with its own toggle." width="760" height="1115">
     </figure>
     <div class="panelcopy">
       <h3>What the panel tells you</h3>
       <p>"ready" means that tab is signed in and can receive a prompt. If a site
       signs you out, the panel says so, so a prompt never disappears quietly.</p>
-      <p>Your plan shows in the corner, your waiting time so far sits at the
-      top, and the full dashboard is one click away.</p>
+      <p>Your plan shows in the corner, and the full dashboard is one click
+      away. Answers that land while you are elsewhere are listed at the bottom.</p>
     </div>
   </div>
 </section>
@@ -85,12 +85,14 @@
 <section id="notify">
   <h2>Then go and do something else</h2>
   <p class="sub">That is where the name comes from. Start a prompt, switch to
-  your real work, and get a notification when the answer lands.</p>
+  your real work, and get called back when the answer lands.</p>
 
   <figure>
-    <img src="img/notify.png" alt="Three notifications stacked: Claude has answered, ready after 48 seconds; Gemini has answered; ChatGPT has answered." width="1200" height="420">
-    <figcaption>The notification names the AI and takes you to that conversation.
-    It stays quiet if you never left the tab, or if the answer took a few seconds.</figcaption>
+    <img src="img/notify.png" alt="The Answers ready list in the WhileAI popup: Claude has answered, ready after 48 seconds; Gemini has answered; ChatGPT has answered. Beside it, the toolbar icon with a green 3 and an optional desktop notification." width="1200" height="470">
+    <figcaption>Each answer that lands while you are elsewhere is listed at the bottom
+    of the popup, and counted on the toolbar icon. Click one and you are in that
+    conversation. A short chime and a desktop notification are optional switches.
+    Nothing is listed for an answer you were already looking at.</figcaption>
   </figure>
 </section>
 
@@ -113,7 +115,7 @@
 
 <section id="pricing">
   <h2>Free to use. Pro for the analysis.</h2>
-  <p class="sub">Sending prompts, the queue, the notification and the basic
+  <p class="sub">Sending prompts, the queue, the answers-ready list and the basic
   dashboard are free, with no time limit and no cap on prompts. The free plan
   sends each prompt to two AIs at a time.</p>
 
@@ -122,18 +124,23 @@
     <figcaption>Pro answers the question that pays for it: which subscription are you not using?</figcaption>
   </figure>
 
+  <figure>
+    <img src="img/speed.png" alt="A head to head table of five AIs with first words, typical answer time and how often each was fastest on shared prompts, with Gemini marked fastest, above a heatmap of waiting by hour and weekday." width="1200" height="745" loading="lazy">
+    <figcaption>And the other one: which AI is actually fastest on the prompts you sent to several at once, and when in the week your waiting piles up.</figcaption>
+  </figure>
+
   <div class="cards">
     <div class="card">
       <h3>Free</h3>
       <p>Unlimited prompts to two AIs at a time. Queue, a switch per AI,
-      answer-ready notifications, the last 7 days of your dashboard, shareable
+      the answers-ready list with its chime, the last 7 days of your dashboard, shareable
       summary cards, JSON export and delete.</p>
     </div>
     <div class="card">
       <h3>Pro: $5 a month, $39 a year, or $49 once</h3>
       <p>All five AIs at once, your full history, what each subscription costs
       you per prompt, which AI answers first, a weekly report and your own
-      notification rules. Every install starts with 14 days of Pro, no card.</p>
+      alert rules. Every install starts with 14 days of Pro, no card.</p>
     </div>
   </div>
 
@@ -167,35 +174,43 @@
 </section>
 
 <section id="help">
-  <h2>Help</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Something is broken</h3>
-      <p>AI sites change their pages often. If a prompt stops arriving, email
-      me and it usually gets fixed the same week:
-      <a href="mailto:aytarahmetyasin@gmail.com">aytarahmetyasin@gmail.com</a></p>
-    </div>
-    <div class="card">
-      <h3>How much does it cost</h3>
-      <p>Using it is free: unlimited prompts to two AIs at a time, with the
-      notification and the 7-day dashboard. <a href="upgrade/">Pro</a> is $5 a
-      month, $39 a year or $49 once, and adds all five AIs and the analysis.</p>
-    </div>
-    <div class="card">
-      <h3>Which AIs are supported</h3>
-      <p>ChatGPT, Claude, Perplexity, Gemini and DeepSeek. It only runs on
-      those five sites and asks for no other permissions.</p>
-    </div>
-    <div class="card">
-      <h3>What it asks for</h3>
-      <p>Eight Chrome permissions and access to the five AI sites only, no
-      "all sites" access. Each one is explained on the
-      <a href="privacy/">privacy page</a>.</p>
-    </div>
+  <h2>Questions</h2>
+  <p class="sub">The ones people actually ask. If yours is not here,
+  <a href="mailto:aytarahmetyasin@gmail.com">write to me</a>.</p>
+
+  <div class="faq">
+    <details><summary>While I wait in one tab, are the other AIs being timed too?</summary>
+      <p>Yes. Every AI tab is timed on its own, at the same moment, including the ones in the background that you are not looking at. If you send one prompt to four AIs, you get four separate timings.</p>
+      <p>The dashboard shows this two ways, because they are different questions. <b>Time spent waiting</b> adds up every AI's wait. Under it, <b>on the clock</b> merges the waits that overlapped. Four AIs that each take 10 seconds, all at once, is 40 seconds of waiting and 10 seconds on the clock. The first tells you how much answering you asked for; the second is how long you actually sat there.</p></details>
+    <details><summary>Does it work when the AI tab is in the background, or in another window?</summary>
+      <p>Yes, that is the normal case. Your prompt is delivered to tabs you are not looking at, and the answers-ready list tells you when each one has answered. Chrome slows background tabs down a great deal; WhileAI times its own steps on a clock Chrome does not slow, so a tab you have not touched for an hour still receives the prompt straight away.</p></details>
+    <details><summary>How do I find out that an answer is ready?</summary>
+      <p>Three ways, and only the first is always on. The WhileAI popup has an <b>Answers ready</b> list at the bottom: one line per answer that landed while you were not looking at that tab, naming the AI and how long it took. Click a line and you are in that conversation, and the line goes away. The toolbar icon shows the same count in green. If you want more, the dashboard has a switch for a short chime that plays once per answer, and one for a desktop notification. There is a "Send a test" button next to them, so you can check that your computer lets Chrome make a sound and show notifications.</p></details>
+    <details><summary>DeepSeek has "DeepThink" and "Search" switched on. Does my prompt go out in those modes?</summary>
+      <p>No. DeepSeek remembers those two buttons from your last visit, and a slow thinking mode is rarely what you want when the same prompt is going to several AIs. Before WhileAI sends a prompt there on your behalf it switches both off, the same click you would make, so the prompt goes out in the standard mode. It only does this on prompts it delivers, never while you are typing yourself. If you want the modes left alone, untick "Send in each AI's standard mode" in the popup.</p></details>
+    <details><summary>Will it send my prompt to an AI I switched off?</summary>
+      <p>No. There is one switch per AI and an AI that is off receives nothing. Closing an AI's tab switches it off too. On the free plan a prompt reaches two other AIs at a time; if you switched on more, a notice tells you by name which ones were left out.</p></details>
+    <details><summary>What do writing, waiting and reading time mean, and how can it know?</summary>
+      <p>Writing is the time keys are being pressed in the message box. Waiting is from the moment you send until the answer stops arriving. Reading is time with the tab in front, the window focused, and some sign of life from you in the last minute. All three come from timing alone. WhileAI never reads what you type or what the AI writes, and a tab left open overnight does not count as eight hours of reading.</p></details>
+    <details><summary>What is "time you won back"?</summary>
+      <p>The share of your waiting that you spent on something else instead of watching the answer appear. A higher number is better. It only counts answers in tabs you were using yourself; prompts delivered to background tabs are left out, because "you left the tab" means nothing for a tab you were never in.</p></details>
+    <details><summary>The subscription panel says "too early to say". Why?</summary>
+      <p>It will not judge a subscription on less than 14 days of use. Until then it shows what each prompt has cost you so far, scaled from the days it has. After two weeks it says which subscriptions are earning their keep and which you have barely opened.</p></details>
+    <details><summary>Something stopped working on one of the AI sites.</summary>
+      <p>The AI sites change their pages often. WhileAI checks itself, and when a site changes, a fix is usually published within hours and installs on its own, with no store update. Reloading the AI tab picks it up. If it has not come back by the next day, write to me.</p></details>
+    <details><summary>Which browsers and which AIs?</summary>
+      <p>Chrome, and browsers that install from the Chrome Web Store such as Edge, Brave and Arc. ChatGPT, Claude, Gemini, Perplexity and DeepSeek. It runs on those five sites only and asks for no "all sites" access. Every permission is explained on the <a href="privacy/">privacy page</a>.</p></details>
+    <details><summary>Does it use my API keys or my passwords?</summary>
+      <p>Neither. It works inside the tabs you are already signed in to, the same way you would: it puts the text in the box and presses send. It never sees a password, and there is nothing to configure.</p></details>
+    <details><summary>Is this allowed by the AI sites?</summary>
+      <p>WhileAI does by machine what you would do by hand in your own account, one prompt at a time, at human pace. It does not solve CAPTCHAs, get around usage limits or hide what it is. When a site puts up a check or a limit, it stops and tells you. Each provider's terms are still yours to follow, and none of them is affiliated with WhileAI.</p></details>
+    <details><summary>How much does it cost?</summary>
+      <p>Using it is free: unlimited prompts to two AIs at a time, with the answers-ready list and the 7-day dashboard. <a href="upgrade/">Pro</a> is $5 a month, $39 a year or $49 once, and adds all five AIs and the analysis. Every install starts with 14 days of Pro, no card.</p></details>
   </div>
 
   <div class="actions" style="margin-top:34px">
     <a class="btn" href="https://chromewebstore.google.com/detail/jkemgnopkjenepaohooaghojmoabplmp">Add to Chrome</a>
+    <a class="btn ghost" href="upgrade/">See Pro</a>
     <a class="btn ghost" href="privacy/">Privacy policy</a>
   </div>
 </section>
