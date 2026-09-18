@@ -1,5 +1,5 @@
 {
-  "version": 17,
+  "version": 18,
   "updated": "2026-09-12",
   "platforms": {
     "perplexity": {
@@ -25,7 +25,8 @@
         "/rest/sse/perplexity_ask"
       ],
       "userMessageSelectors": [
-        "[data-testid=\"user-query\"]",
+        ".group\\/user-bubble .whitespace-pre-line",
+        "[class*=\"user-bubble\"] .whitespace-pre-line",
         ".whitespace-pre-line"
       ],
       "loginUrlPatterns": [
