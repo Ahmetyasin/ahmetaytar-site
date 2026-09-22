@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>whileAI — privacy policy</title>
-<meta name="description" content="whileAI never reads the AI's answers. Your prompts and timings stay in your browser. No account, no analytics, no telemetry.">
+<title>WhileAI — privacy policy</title>
+<meta name="description" content="WhileAI never reads the AI's answers. Your prompts and timings stay in your browser. No account, no analytics, no telemetry.">
 <link rel="stylesheet" href="../../style.css">
 <link rel="icon" href="../img/icon.png">
 </head>
@@ -18,9 +18,9 @@
 <div class="wrap prose">
 
   <h1 style="font-size:38px">Privacy policy</h1>
-  <p class="updated">WhileAI browser extension. Last updated 18 September 2026.</p>
+  <p class="updated">WhileAI browser extension. Last updated 22 September 2026.</p>
 
-  <p style="margin-top:22px">whileAI never reads the AI's answers. Your prompts
+  <p style="margin-top:22px">WhileAI never reads the AI's answers. Your prompts
   and timings stay in your browser. There is no account and no analytics.
   Three kinds of network request exist and none carries anything about you.
   All three are described below, with their exact fields.</p>
@@ -43,51 +43,59 @@
     page address, such as <code>c/68a1f3de</code>, so the dashboard can tell
     you how many follow-ups an answer needed. A readable address, a page title
     or a search term is never stored.</li>
-    <li><strong>Your settings.</strong> Which AIs you switched on, your
-    notification rules, and, if you use the subscription panel, the monthly
-    prices you typed in. Those prices never leave your computer.</li>
+    <li><strong>Your settings.</strong> Which AIs you switched on, whether ready
+    answers are counted on the toolbar icon and whether the chime plays, your
+    notification rules, how long records are kept, and, if you use the
+    subscription panel, the monthly prices you typed in. Those prices never
+    leave your computer.</li>
     <li><strong>Your prompt text, briefly.</strong> It is held only while it is
     being delivered to the AIs you chose, then deleted. Keeping a history is off
     by default and is yours to switch on.</li>
+    <li><strong>A diagnostic recording, only if you start one.</strong> The
+    dashboard has a "Something not working?" switch, off by default. While it is
+    on, WhileAI notes which AI a step failed on and what failed, so you can
+    download the file and send it with a bug report. It records no prompt and no
+    answer text, nothing is sent anywhere on its own, and "Clear" removes it.</li>
   </ul>
 
   <h3>The "Answers ready" list</h3>
-  <p>When an answer lands while you are not looking at that tab, whileAI adds
+  <p>When an answer lands while you are not looking at that tab, WhileAI adds
   one line to a short list in your browser: which AI it was, the browser tab it
   is in, how long the answer took, and when it landed. It holds no prompt and no
-  answer text. A line is removed when you visit that tab, when the tab closes,
-  when you press Clear, or after 12 hours.</p>
+  answer text. The list keeps at most the 20 newest lines, and a line is removed
+  when you visit that tab, when the tab closes, when you press Clear, or after
+  12 hours.</p>
 
   <h3>Standard mode on delivery</h3>
   <p>Some sites remember a slower mode from your last visit (DeepSeek keeps
-  "DeepThink" and "Search" switched on). Before whileAI sends a prompt to such a
+  "DeepThink" and "Search" switched on). Before WhileAI sends a prompt to such a
   site on your behalf it clicks those buttons off, so the prompt goes out in
   the standard mode. It changes nothing else on the page, and it never does this
   while you are typing in that site yourself.</p>
 
-  <h2>What whileAI never does</h2>
+  <h2>What WhileAI never does</h2>
   <ul>
     <li>Never reads or stores the AI's responses. It watches only whether an
     answer is still arriving, so it can time it.</li>
     <li>Never sees, stores or transmits your passwords or login details. You
     sign in yourself, in your own browser.</li>
     <li>Never solves or bypasses CAPTCHAs or verification checks. When a
-    provider shows one, whileAI stops and tells you.</li>
+    provider shows one, WhileAI stops and tells you.</li>
     <li>Never sends your prompts, the AI's answers, or your browsing anywhere.</li>
   </ul>
 
-  <h2>The three times whileAI uses the network</h2>
+  <h2>The three times WhileAI uses the network</h2>
   <p>All three are listed here rather than buried, because "no server at all"
   would not be strictly true, and a privacy policy that overstates itself is
   worse than one that explains itself.</p>
   <ul>
-    <li><strong>Selector updates.</strong> Every few hours whileAI fetches a
+    <li><strong>Selector updates.</strong> Every few hours WhileAI fetches a
     small public file describing where the send button and message box are on
     each AI site. These sites change often, and this is what lets a fix reach
     you without waiting for a store update. It is a plain download of a public
     file: no identifier, no prompt, nothing about you.</li>
     <li><strong>A breakage signal, when a site changes (since 0.9.0).</strong>
-    The AI sites redesign their pages without warning, and then whileAI can
+    The AI sites redesign their pages without warning, and then WhileAI can
     no longer find the message box or the send button. When its own check
     sees that, it sends <strong>one message a day per site</strong> to
     <code>ahmetaytar.com/whileai/health/ping</code> containing exactly: the
@@ -116,6 +124,41 @@
   gemini.google.com, chat.deepseek.com. On each it reads the message box and the
   newest message, so it can copy your prompt across and time the reply.</p>
 
+  <h2 id="permissions">Every permission, and what it is for</h2>
+  <p>Chrome shows these as a list of warnings when you install, without saying
+  what any of them is used for. Here is the whole list, and there is nothing
+  else.</p>
+  <ul>
+    <li><strong>storage</strong> — remembers which AIs you picked, your
+    settings and your timings. All of it stays on your machine.</li>
+    <li><strong>alarms</strong> — wakes the extension to check whether an
+    answer has finished. Chrome stops an idle extension, so without this a
+    long answer would never be timed.</li>
+    <li><strong>notifications</strong> — tells you when an AI needs you:
+    signed out, out of quota, or showing a verification check. Also delivers
+    the weekly report on Pro. There is no notification for an ordinary
+    answer.</li>
+    <li><strong>tabs</strong> — finds the tab for each AI you picked, so your
+    prompt goes to the session you are already using instead of opening a
+    duplicate. It reads the address only, to tell one AI's tab from
+    another's.</li>
+    <li><strong>scripting</strong> — puts the extension's own script back into
+    an AI tab after the page navigates or Chrome discards it. Without it the
+    extension would quietly stop working in tabs you left open.</li>
+    <li><strong>webNavigation</strong> — these sites are single-page apps, so
+    switching conversations changes the address without reloading. This is how
+    the extension learns the page changed.</li>
+    <li><strong>tabGroups</strong> — puts the tabs it opens into one named
+    group, so you can see which tabs are its and close them together.</li>
+    <li><strong>offscreen</strong> — plays the optional chime. An extension's
+    background worker cannot play a sound, so Chrome requires a hidden page
+    while it plays; it is created when needed and closed a few seconds after
+    the last chime.</li>
+    <li><strong>The five sites above</strong> — the only websites it can touch.
+    It asks for no "read your data on all websites" access, which is why it
+    cannot see your banking, your email, or any other tab.</li>
+  </ul>
+
   <h2>Your data is yours</h2>
   <p>The dashboard can export everything as JSON on every plan (CSV is part of
   Pro), import it on another computer, and delete everything at once. Removing
@@ -129,12 +172,11 @@
   and the <a href="../refund/">refund policy</a> have the rest.</p>
 
   <h2>Children</h2>
-  <p>whileAI is not directed at children under 13 and collects nothing from
+  <p>WhileAI is not directed at children under 13 and collects nothing from
   anyone, of any age.</p>
 
   <h2>Changes</h2>
-  <p>If this policy changes, the date at the top changes with it, and the
-  the previous text is kept and available on request.</p>
+  <p>If this policy changes, the date at the top changes with it, and the previous text is kept and available on request.</p>
 
   <h2>Contact</h2>
   <p><a href="mailto:aytarahmetyasin@gmail.com">aytarahmetyasin@gmail.com</a></p>
@@ -143,7 +185,7 @@
 
 <footer><div class="wrap">
   <span>&copy; 2026 Ahmet Aytar</span>
-  <a href="/whileai">whileAI</a>
+  <a href="/whileai">WhileAI</a>
 </div></footer>
 
 </body>

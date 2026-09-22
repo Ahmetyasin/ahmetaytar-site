@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WhileAI: ask ChatGPT, Claude and Gemini at once</title>
-<meta name="description" content="Send one prompt to ChatGPT, Claude, Gemini, Perplexity and DeepSeek in your own tabs. Get told when answers land. See where your AI time goes.">
+<title>WhileAI: ask ChatGPT, Claude and Gemini at once, track AI time and cost</title>
+<meta name="description" content="Send one prompt to ChatGPT, Claude, Gemini, Perplexity and DeepSeek in your own tabs. Know when answers land. See where your AI time goes and which subscription you are not using.">
 <link rel="stylesheet" href="../style.css">
 <link rel="icon" href="img/icon.png">
 <link rel="canonical" href="https://ahmetaytar.com/whileai/">
@@ -18,7 +18,7 @@
 
 <header class="top"><div class="wrap">
   <a class="brand" href="/"><img src="img/icon.png" alt="">Ahmet Aytar</a>
-  <nav><a href="#how">How it works</a><a href="#time">Your AI time</a><a href="#pricing">Pricing</a><a href="#help">Questions</a></nav>
+  <nav><a href="#how">How it works</a><a href="#time">Your AI time</a><a href="#answers">What it answers</a><a href="#pricing">Pricing</a><a href="#help">Questions</a></nav>
 </div></header>
 
 <div class="wrap">
@@ -27,7 +27,7 @@
   <div class="eyebrow">Chrome extension</div>
   <h1>Ask one question. Get five answers.</h1>
   <p class="lede">You already pay for more than one AI. Asking them the same
-  thing means typing it five times, in five tabs. whileAI does that part for
+  thing means typing it five times, in five tabs. WhileAI does that part for
   you, inside the sessions you are already signed in to.</p>
   <div class="actions">
     <a class="btn" href="https://chromewebstore.google.com/detail/jkemgnopkjenepaohooaghojmoabplmp">Add to Chrome</a>
@@ -48,7 +48,7 @@
   <div class="steps">
     <div class="step"><b>01</b><div>
       <h3>Sign in to the AIs you use</h3>
-      <p>Nothing to configure. whileAI uses the tabs and accounts you already
+      <p>Nothing to configure. WhileAI uses the tabs and accounts you already
       have, so it never asks for a password or an API key.</p>
     </div></div>
     <div class="step"><b>02</b><div>
@@ -70,7 +70,7 @@
 
   <div class="panelrow">
     <figure class="panelshot">
-      <img src="img/panel.png" alt="The whileAI panel showing ChatGPT, Claude, Perplexity, Gemini and DeepSeek, each marked ready with its own toggle." width="760" height="1115">
+      <img src="img/panel.png" alt="The WhileAI panel showing ChatGPT, Claude, Perplexity, Gemini and DeepSeek, each marked ready with its own toggle." width="760" height="1115">
     </figure>
     <div class="panelcopy">
       <h3>What the panel tells you</h3>
@@ -113,6 +113,41 @@
   </figure>
 </section>
 
+<section id="answers">
+  <h2>Questions your own numbers can answer</h2>
+  <p class="sub">Once a few weeks of measurement exist, the dashboard stops being
+  a set of totals and starts settling arguments. Each of these is a real section
+  of it, worked out from timing and message counts alone.</p>
+
+  <div class="facts">
+    <div class="fact"><i>&#9679;</i><div><b>Did the first answer do the job?</b>
+      The average number of messages a conversation took, per AI. Close to one
+      means the first answer was usually enough; an AI that always needs three
+      more messages is costing you more than its price. This comes from how many
+      times you replied in the same chat, never from what was said.</div></div>
+    <div class="fact"><i>&#9679;</i><div><b>Do slow answers make you switch tabs?</b>
+      Your own patience, measured. Waits are grouped by length, and each group
+      shows how often you left the tab during one. Most people find their real
+      threshold is far shorter than they would have guessed.</div></div>
+    <div class="fact"><i>&#9679;</i><div><b>Which AI is actually fastest for you?</b>
+      Not a benchmark from someone else's prompts. When one prompt goes to
+      several AIs, they are racing on identical input, so the head-to-head table
+      is a fair comparison of first words, finishing time, and how often each one
+      won.</div></div>
+    <div class="fact"><i>&#9679;</i><div><b>Which subscription are you not using?</b>
+      Type what you pay each month and every AI gets a cost per prompt and per
+      hour of real use. If one costs you twenty dollars and saw two prompts, it
+      says so. Those prices never leave your computer.</div></div>
+    <div class="fact"><i>&#9679;</i><div><b>When does your waiting pile up?</b>
+      An hour-by-weekday heatmap, your longest individual waits, and whether you
+      stayed on the tab for each one.</div></div>
+  </div>
+
+  <p class="fine">Follow-up counts, the head to head, the heatmap and the
+  subscription costs are part of <a href="upgrade/">Pro</a>. The three-phase
+  card, the daily chart and the per-AI totals are free for the last 7 days.</p>
+</section>
+
 <section id="pricing">
   <h2>Free to use. Pro for the analysis.</h2>
   <p class="sub">Sending prompts, the queue, the answers-ready list and the basic
@@ -132,15 +167,17 @@
   <div class="cards">
     <div class="card">
       <h3>Free</h3>
-      <p>Unlimited prompts to two AIs at a time. Queue, a switch per AI,
-      the answers-ready list with its chime, the last 7 days of your dashboard, shareable
-      summary cards, JSON export and delete.</p>
+      <p>Unlimited prompts to two AIs at a time, so one question gets you three
+      answers. A queue you can see, a switch per AI, the answers-ready list with
+      its chime, the last 7 days of your dashboard, weekly and monthly summary
+      cards, and JSON export, import and delete.</p>
     </div>
     <div class="card">
       <h3>Pro: $5 a month, $39 a year, or $49 once</h3>
-      <p>All five AIs at once, your full history, what each subscription costs
-      you per prompt, which AI answers first, a weekly report and your own
-      alert rules. Every install starts with 14 days of Pro, no card.</p>
+      <p>Every AI you switch on, your full history with the heatmap, what each
+      subscription costs you per prompt, which AI answers first, whether that
+      answer was enough, a weekly report and your own notification rules.
+      Every install starts with 14 days of Pro, no card.</p>
     </div>
   </div>
 
@@ -185,7 +222,8 @@
     <details><summary>Does it work when the AI tab is in the background, or in another window?</summary>
       <p>Yes, that is the normal case. Your prompt is delivered to tabs you are not looking at, and the answers-ready list tells you when each one has answered. Chrome slows background tabs down a great deal; WhileAI times its own steps on a clock Chrome does not slow, so a tab you have not touched for an hour still receives the prompt straight away.</p></details>
     <details><summary>How do I find out that an answer is ready?</summary>
-      <p>The WhileAI popup has an <b>Answers ready</b> list at the bottom: one line per answer that landed while you were not looking at that tab, naming the AI and how long it took. Click a line and you are in that conversation, and the line goes away. The toolbar icon shows the same count in green. If you also want to hear it, the dashboard has a switch for a short chime that plays once per answer, with a "Test the chime" button next to it.</p></details>
+      <p>The WhileAI popup has an <b>Answers ready</b> list at the bottom: one line per answer that landed while you were not looking at that tab, naming the AI and how long it took. Click a line and you are in that conversation, and the line goes away. The toolbar icon shows the same count in green, up to "9+". If you also want to hear it, the dashboard has a switch for a short chime that plays once per answer, with a "Test the chime" button next to it. There is no desktop notification for an ordinary answer: the list and the count already say it, and the operating system can swallow a notification without telling anyone.</p>
+      <p>An <b>amber</b> badge means something needs you rather than something being ready: an AI signed you out, hit a limit, or is showing a verification check. Amber wins over green, because a problem is worth more of your attention than a finished answer.</p></details>
     <details><summary>DeepSeek has "DeepThink" and "Search" switched on. Does my prompt go out in those modes?</summary>
       <p>No. DeepSeek remembers those two buttons from your last visit, and a slow thinking mode is rarely what you want when the same prompt is going to several AIs. Before WhileAI types a prompt there on your behalf it switches both off, the same click you would make, so the prompt goes out in the standard mode. It only does this on prompts it delivers, never while you are typing in DeepSeek yourself.</p></details>
     <details><summary>Will it send my prompt to an AI I switched off?</summary>
@@ -197,15 +235,16 @@
     <details><summary>The subscription panel says "too early to say". Why?</summary>
       <p>It will not judge a subscription on less than 14 days of use. Until then it shows what each prompt has cost you so far, scaled from the days it has. After two weeks it says which subscriptions are earning their keep and which you have barely opened.</p></details>
     <details><summary>Something stopped working on one of the AI sites.</summary>
-      <p>The AI sites change their pages often. WhileAI checks itself, and when a site changes, a fix is usually published within hours and installs on its own, with no store update. Reloading the AI tab picks it up. If it has not come back by the next day, write to me.</p></details>
+      <p>The AI sites change their pages often. WhileAI checks itself, and when a site changes, a fix is usually published within hours and installs on its own, with no store update. Reloading the AI tab picks it up. If it has not come back by the next day, write to me.</p>
+      <p>To send something concrete: the dashboard has <b>"Something not working? Send a diagnostic report"</b> under Your data. Turn it on, do the thing that fails, then download the file and attach it. It records which AI and which step failed, never your prompts or answers. The popup also has a "Report a problem" link that fills in the version and which AIs you had switched on.</p></details>
     <details><summary>Which browsers and which AIs?</summary>
-      <p>Chrome, and browsers that install from the Chrome Web Store such as Edge, Brave and Arc. ChatGPT, Claude, Gemini, Perplexity and DeepSeek. It runs on those five sites only and asks for no "all sites" access. Every permission is explained on the <a href="privacy/">privacy page</a>.</p></details>
+      <p>Chrome, and browsers that install from the Chrome Web Store such as Edge, Brave and Arc. ChatGPT, Claude, Gemini, Perplexity and DeepSeek. It runs on those five sites only and asks for no "all sites" access. Every permission it asks for, and what each one is for, is listed on the <a href="privacy/#permissions">privacy page</a>.</p></details>
     <details><summary>Does it use my API keys or my passwords?</summary>
       <p>Neither. It works inside the tabs you are already signed in to, the same way you would: it puts the text in the box and presses send. It never sees a password, and there is nothing to configure.</p></details>
     <details><summary>Is this allowed by the AI sites?</summary>
       <p>WhileAI does by machine what you would do by hand in your own account, one prompt at a time, at human pace. It does not solve CAPTCHAs, get around usage limits or hide what it is. When a site puts up a check or a limit, it stops and tells you. Each provider's terms are still yours to follow, and none of them is affiliated with WhileAI.</p></details>
     <details><summary>How much does it cost?</summary>
-      <p>Using it is free: unlimited prompts to two AIs at a time, with the answers-ready list and the 7-day dashboard. <a href="upgrade/">Pro</a> is $5 a month, $39 a year or $49 once, and adds all five AIs and the analysis. Every install starts with 14 days of Pro, no card.</p></details>
+      <p>Using it is free: unlimited prompts to two AIs at a time, with the answers-ready list and the 7-day dashboard. <a href="upgrade/">Pro</a> is $5 a month, $39 a year or $49 once, and adds every AI you switch on, plus the analysis. Every install starts with 14 days of Pro, no card.</p></details>
   </div>
 
   <div class="actions" style="margin-top:34px">
