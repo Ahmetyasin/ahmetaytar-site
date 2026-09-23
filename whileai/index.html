@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>WhileAI: ask ChatGPT, Claude and Gemini at once, track AI time and cost</title>
-<meta name="description" content="Send one prompt to ChatGPT, Claude, Gemini, Perplexity and DeepSeek in your own tabs. Know when answers land. See where your AI time goes and which subscription you are not using.">
+<meta name="description" content="Type a prompt once. ChatGPT, Claude, Gemini, Perplexity and DeepSeek answer in your own tabs. Get told when each answer lands, and see where your AI time and money go.">
 <link rel="stylesheet" href="../style.css">
 <link rel="icon" href="img/icon.png">
 <link rel="canonical" href="https://ahmetaytar.com/whileai/">
-<meta property="og:title" content="WhileAI: one prompt, several AIs, your own tabs">
-<meta property="og:description" content="Type a prompt once. ChatGPT, Claude, Gemini, Perplexity and DeepSeek answer in your own tabs, and you get told when they are done.">
-<meta property="og:image" content="https://ahmetaytar.com/whileai/img/proof.png">
+<meta property="og:title" content="WhileAI: one prompt, every AI you use, your own tabs">
+<meta property="og:description" content="Type a prompt once. ChatGPT, Claude, Gemini, Perplexity and DeepSeek answer in your own tabs, and you are told when each one is done.">
+<meta property="og:image" content="https://ahmetaytar.com/whileai/img/notify.png">
 <meta property="og:url" content="https://ahmetaytar.com/whileai">
 <meta name="twitter:card" content="summary_large_image">
 <script src="ads.js" defer></script>
@@ -19,7 +19,7 @@
 
 <header class="top"><div class="wrap">
   <a class="brand" href="/"><img src="img/icon.png" alt="">Ahmet Aytar</a>
-  <nav><a href="#how">How it works</a><a href="#install">Installing</a><a href="#time">Your AI time</a><a href="#answers">What it answers</a><a href="#pricing">Pricing</a><a href="#help">Questions</a></nav>
+  <nav><a href="#how">How it works</a><a href="#time">Your AI time</a><a href="#pricing">Pricing</a><a href="#install">Installing</a><a href="#help">Questions</a></nav>
 </div></header>
 
 <div class="wrap">
@@ -27,20 +27,44 @@
 <section class="hero plain">
   <div class="eyebrow">Chrome extension</div>
   <h1>Ask one question. Get five answers.</h1>
-  <p class="lede">You already pay for more than one AI. Asking them the same
-  thing means typing it five times, in five tabs. WhileAI does that part for
-  you, inside the sessions you are already signed in to.</p>
+  <p class="lede">You already pay for more than one AI. WhileAI takes the
+  prompt you type in one of them and sends it to the others, in the tabs and
+  accounts you already have. Then it tells you when each answer is in.</p>
   <div class="actions">
     <a class="btn" href="https://chromewebstore.google.com/detail/jkemgnopkjenepaohooaghojmoabplmp" onclick="whileaiConversion(WHILEAI_ADS.addToChrome)">Add to Chrome</a>
-    <span class="note">Free to use. No account, no API keys. <a href="upgrade/">Pro</a> adds the analysis.</span>
+    <span class="note">Free. No account, no API keys. 14 days of Pro included.</span>
+  </div>
+  <div class="chips"><em>Works with</em><span>ChatGPT</span><span>Claude</span><span>Gemini</span><span>Perplexity</span><span>DeepSeek</span></div>
+
+  <div class="fanout" aria-label="One prompt typed in ChatGPT reaches Claude, Perplexity, Gemini and DeepSeek">
+    <div class="prompt">
+      <div class="who">You typed, once, in ChatGPT</div>
+      <div class="bubble">Name one animal that can sleep standing up.</div>
+      <div class="sub">A real run. Nothing was copied, pasted or configured.</div>
+    </div>
+    <div class="answers">
+      <div class="ai src"><b>ChatGPT</b><span>you typed here</span><i></i></div>
+      <div class="ai"><b>Claude</b><span>received it, answered</span><i></i></div>
+      <div class="ai"><b>Perplexity</b><span>received it, answered</span><i></i></div>
+      <div class="ai"><b>Gemini</b><span>received it, answered</span><i></i></div>
+      <div class="ai"><b>DeepSeek</b><span>received it, answered</span><i></i></div>
+    </div>
   </div>
 </section>
 
-<figure class="proofscroll">
-  <img src="img/proof.png" alt="Five AI panes side by side. The prompt was typed in ChatGPT; Claude, Perplexity, Gemini and DeepSeek each show the same question and their own answer." width="1200" height="660">
-  <figcaption>A real run, recorded. The question was typed once, in ChatGPT.
-  The other four received it on their own.</figcaption>
-</figure>
+<section class="plain" style="padding-top:8px">
+  <div class="benefits">
+    <div class="benefit"><span class="k">Ask</span><b>Type once, ask them all</b>
+      <p>Write in whichever AI you were going to use anyway. The others get the
+      same prompt, each in its own tab, one at a time, at human pace.</p></div>
+    <div class="benefit"><span class="k">Wait less</span><b>Go and do something else</b>
+      <p>The popup lists every answer that landed while you were elsewhere, the
+      toolbar icon counts them, and a chime is one switch away.</p></div>
+    <div class="benefit"><span class="k">Know</span><b>See what your AI time buys</b>
+      <p>Writing, waiting and reading time per AI, which one is fastest on your
+      own prompts, and which subscription you are paying for but not using.</p></div>
+  </div>
+</section>
 
 <section id="how">
   <h2>How it works</h2>
@@ -74,11 +98,12 @@
       <img src="img/panel.png" alt="The WhileAI panel showing ChatGPT, Claude, Perplexity, Gemini and DeepSeek, each marked ready with its own toggle." width="760" height="1115">
     </figure>
     <div class="panelcopy">
-      <h3>What the panel tells you</h3>
-      <p>"ready" means that tab is signed in and can receive a prompt. If a site
-      signs you out, the panel says so, so a prompt never disappears quietly.</p>
-      <p>Your plan shows in the corner, and the full dashboard is one click
-      away. Answers that land while you are elsewhere are listed at the bottom.</p>
+      <h3>The whole interface is this panel</h3>
+      <p>One switch per AI. "ready" means that tab is signed in and can receive
+      a prompt; if a site signs you out or hits a limit, the panel says so by
+      name, so a prompt never disappears quietly.</p>
+      <p>There is no new chat window to learn. You keep using ChatGPT, Claude
+      and the rest exactly as they are, with their files, projects and modes.</p>
     </div>
   </div>
 </section>
@@ -183,38 +208,16 @@
   </div>
 
   <div class="actions" style="margin-top:26px">
-    <a class="btn" href="upgrade/">See Pro</a>
+    <a class="btn" href="https://chromewebstore.google.com/detail/jkemgnopkjenepaohooaghojmoabplmp" onclick="whileaiConversion(WHILEAI_ADS.addToChrome)">Add to Chrome</a>
+    <a class="btn ghost" href="upgrade/">Compare Free and Pro</a>
     <span class="note">Nothing is deleted to enforce the free plan. Upgrade and your whole history is there.</span>
   </div>
 </section>
 
-<section id="promises">
-  <h2>What it will not do</h2>
-  <p class="sub">This matters more than any feature, so it is worth being exact.</p>
-
-  <div class="facts">
-    <div class="fact"><i>&#9679;</i><div><b>It does not read the answers.</b>
-      It watches whether one is still arriving, so it can time it. The text is
-      never stored or sent anywhere.</div></div>
-    <div class="fact"><i>&#9679;</i><div><b>It does not collect anything about you.</b>
-      No account and no analytics. Your prompts and timings stay in your
-      browser, and you can export or delete them. The few network requests it
-      does make are listed on the <a href="privacy/">privacy page</a>.</div></div>
-    <div class="fact"><i>&#9679;</i><div><b>It does not bypass anything.</b>
-      No CAPTCHA solving, no working around a usage limit, no hidden sessions,
-      no pretending to be a different browser.</div></div>
-    <div class="fact"><i>&#9679;</i><div><b>It does not touch your password.</b>
-      You sign in yourself, in your own browser, as you already do.</div></div>
-    <div class="fact"><i>&#9679;</i><div><b>It stops and tells you.</b>
-      Signed out, rate limited, or a site is showing a verification check:
-      you hear about it rather than finding out an hour later.</div></div>
-  </div>
-</section>
-
 <section id="install">
-  <h2>What installing does, exactly</h2>
-  <p class="sub">Written out in full, because an extension asks for trust
-  before it has earned any.</p>
+  <h2>Exactly what it does, and what it never does</h2>
+  <p class="sub">An extension asks for trust before it has earned any, so
+  this is written out in full.</p>
 
   <div class="facts">
     <div class="fact"><i>&#9679;</i><div><b>In the browser.</b>
@@ -225,11 +228,24 @@
     <div class="fact"><i>&#9679;</i><div><b>Changed by it: nothing.</b>
       Your new-tab page, search engine, homepage and other extensions stay as
       they are. It installs no other software and shows no ads.</div></div>
-    <div class="fact"><i>&#9679;</i><div><b>Leaving your computer: almost nothing.</b>
-      No prompts, no answers, no account. The three small requests it does make
-      are listed on the <a href="privacy/">privacy page</a>, with their exact
-      fields. On first install it opens one welcome page on this site; on
-      removal Chrome opens one goodbye page. Both carry only the version number.</div></div>
+    <div class="fact"><i>&#9679;</i><div><b>It does not read the answers.</b>
+      It watches whether one is still arriving, so it can time it. The text is
+      never stored or sent anywhere.</div></div>
+    <div class="fact"><i>&#9679;</i><div><b>It does not collect anything about you.</b>
+      No account and no analytics. Your prompts and timings stay in your
+      browser, and you can export or delete them. The few network requests it
+      does make are listed on the <a href="privacy/">privacy page</a>, with
+      their exact fields. On first install it opens one welcome page on this
+      site; on removal Chrome opens one goodbye page. Both carry only the
+      version number.</div></div>
+    <div class="fact"><i>&#9679;</i><div><b>It does not bypass anything.</b>
+      No CAPTCHA solving, no working around a usage limit, no hidden sessions,
+      no pretending to be a different browser.</div></div>
+    <div class="fact"><i>&#9679;</i><div><b>It does not touch your password.</b>
+      You sign in yourself, in your own browser, as you already do.</div></div>
+    <div class="fact"><i>&#9679;</i><div><b>It stops and tells you.</b>
+      Signed out, rate limited, or a site is showing a verification check:
+      you hear about it rather than finding out an hour later.</div></div>
     <div class="fact"><i>&#9679;</i><div><b>Removing it: one click.</b>
       <code>chrome://extensions</code> &rarr; WhileAI &rarr; <b>Remove</b>.
       Its stored data goes with it. Pausing is the same page's toggle.</div></div>
@@ -276,11 +292,15 @@
       <p>Using it is free: unlimited prompts to two AIs at a time, with the answers-ready list and the 7-day dashboard. <a href="upgrade/">Pro</a> is $5 a month, $39 a year or $49 once, and adds every AI you switch on, plus the analysis. Every install starts with 14 days of Pro, no card.</p></details>
   </div>
 
-  <div class="actions" style="margin-top:34px">
+</section>
+
+<section class="cta plain">
+  <h2>Ask once. Let every AI you pay for answer.</h2>
+  <div class="actions">
     <a class="btn" href="https://chromewebstore.google.com/detail/jkemgnopkjenepaohooaghojmoabplmp" onclick="whileaiConversion(WHILEAI_ADS.addToChrome)">Add to Chrome</a>
-    <a class="btn ghost" href="upgrade/">See Pro</a>
-    <a class="btn ghost" href="privacy/">Privacy policy</a>
+    <a class="btn ghost" href="upgrade/">See what Pro adds</a>
   </div>
+  <span class="note" style="margin-top:16px">Free, with 14 days of Pro included. No account, no API keys, nothing leaves your browser.</span>
 </section>
 
 </div>
