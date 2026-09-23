@@ -15,7 +15,7 @@
  * are simply not attributed; there is no consent banner to click through.
  */
 (function () {
-  var ADS = { id: 'AW-18470631917', addToChrome: '', install: '', uninstall: '' };
+  var ADS = { id: 'AW-18470631917', addToChrome: 'naARCPDF54IdEO3zvedE', install: '', uninstall: '' };
   window.WHILEAI_ADS = ADS;
 
   /* Fire a conversion if the tag is live; a silent no-op otherwise. */
@@ -23,6 +23,27 @@
     if (!label || typeof window.gtag !== 'function') return;
     window.gtag('event', 'conversion', { send_to: ADS.id + '/' + label });
   };
+
+  /* "Add to Chrome" leaves the page at once, which can cut the conversion
+     request off mid-flight. Google's own click snippet waits for the tag's
+     callback before navigating; this does the same, with a one-second cap so
+     a blocked or slow tag never strands the visitor. Modified clicks (new
+     tab, new window) do not leave the page, so they are not held. */
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest && e.target.closest('a[href^="https://chromewebstore.google.com/detail/"]');
+    if (!a) return;
+    if (!ADS.addToChrome || typeof window.gtag !== 'function') return;
+    var url = a.href;
+    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target === '_blank') {
+      window.gtag('event', 'conversion', { send_to: ADS.id + '/' + ADS.addToChrome, transport_type: 'beacon' });
+      return;
+    }
+    e.preventDefault();
+    var gone = false;
+    var go = function () { if (!gone) { gone = true; location.href = url; } };
+    window.gtag('event', 'conversion', { send_to: ADS.id + '/' + ADS.addToChrome, transport_type: 'beacon', event_callback: go });
+    setTimeout(go, 1000);
+  });
 
   /* Carry the campaign from the landing URL onto the store link, so the
      store's own install report can be read per campaign as a second opinion. */
