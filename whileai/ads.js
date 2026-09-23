@@ -15,7 +15,7 @@
  * are simply not attributed; there is no consent banner to click through.
  */
 (function () {
-  var ADS = { id: 'AW-18470631917', addToChrome: 'naARCPDF54IdEO3zvedE', install: 'uQz2CNH68YIdEO3zvedE', uninstall: '' };
+  var ADS = { id: 'AW-18470631917', addToChrome: 'naARCPDF54IdEO3zvedE', install: 'uQz2CNH68YIdEO3zvedE', uninstall: 'WVdvCNfe8YIdEO3zvedE' };
   window.WHILEAI_ADS = ADS;
 
   /* Fire a conversion if the tag is live; a silent no-op otherwise. */
