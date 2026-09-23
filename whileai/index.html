@@ -13,12 +13,13 @@
 <meta property="og:image" content="https://ahmetaytar.com/whileai/img/proof.png">
 <meta property="og:url" content="https://ahmetaytar.com/whileai">
 <meta name="twitter:card" content="summary_large_image">
+<script src="ads.js" defer></script>
 </head>
 <body>
 
 <header class="top"><div class="wrap">
   <a class="brand" href="/"><img src="img/icon.png" alt="">Ahmet Aytar</a>
-  <nav><a href="#how">How it works</a><a href="#time">Your AI time</a><a href="#answers">What it answers</a><a href="#pricing">Pricing</a><a href="#help">Questions</a></nav>
+  <nav><a href="#how">How it works</a><a href="#install">Installing</a><a href="#time">Your AI time</a><a href="#answers">What it answers</a><a href="#pricing">Pricing</a><a href="#help">Questions</a></nav>
 </div></header>
 
 <div class="wrap">
@@ -30,7 +31,7 @@
   thing means typing it five times, in five tabs. WhileAI does that part for
   you, inside the sessions you are already signed in to.</p>
   <div class="actions">
-    <a class="btn" href="https://chromewebstore.google.com/detail/jkemgnopkjenepaohooaghojmoabplmp">Add to Chrome</a>
+    <a class="btn" href="https://chromewebstore.google.com/detail/jkemgnopkjenepaohooaghojmoabplmp" onclick="whileaiConversion(WHILEAI_ADS.addToChrome)">Add to Chrome</a>
     <span class="note">Free to use. No account, no API keys. <a href="upgrade/">Pro</a> adds the analysis.</span>
   </div>
 </section>
@@ -210,6 +211,34 @@
   </div>
 </section>
 
+<section id="install">
+  <h2>What installing does, exactly</h2>
+  <p class="sub">Written out in full, because an extension asks for trust
+  before it has earned any.</p>
+
+  <div class="facts">
+    <div class="fact"><i>&#9679;</i><div><b>In the browser.</b>
+      On five sites only (chatgpt.com, claude.ai, gemini.google.com,
+      perplexity.ai, chat.deepseek.com) WhileAI puts the prompt you typed in one
+      of them into the message box of the others you switched on, presses
+      send, and times how long each answer takes. That is the whole job.</div></div>
+    <div class="fact"><i>&#9679;</i><div><b>Changed by it: nothing.</b>
+      Your new-tab page, search engine, homepage and other extensions stay as
+      they are. It installs no other software and shows no ads.</div></div>
+    <div class="fact"><i>&#9679;</i><div><b>Leaving your computer: almost nothing.</b>
+      No prompts, no answers, no account. The three small requests it does make
+      are listed on the <a href="privacy/">privacy page</a>, with their exact
+      fields. On first install it opens one welcome page on this site; on
+      removal Chrome opens one goodbye page. Both carry only the version number.</div></div>
+    <div class="fact"><i>&#9679;</i><div><b>Removing it: one click.</b>
+      <code>chrome://extensions</code> &rarr; WhileAI &rarr; <b>Remove</b>.
+      Its stored data goes with it. Pausing is the same page's toggle.</div></div>
+  </div>
+  <p class="fine">WhileAI is an independent extension. It is not affiliated
+  with, endorsed by, or connected to OpenAI, Anthropic, Google, Perplexity or
+  DeepSeek; their names are used only to say which sites it works on.</p>
+</section>
+
 <section id="help">
   <h2>Questions</h2>
   <p class="sub">The ones people actually ask. If yours is not here,
@@ -248,7 +277,7 @@
   </div>
 
   <div class="actions" style="margin-top:34px">
-    <a class="btn" href="https://chromewebstore.google.com/detail/jkemgnopkjenepaohooaghojmoabplmp">Add to Chrome</a>
+    <a class="btn" href="https://chromewebstore.google.com/detail/jkemgnopkjenepaohooaghojmoabplmp" onclick="whileaiConversion(WHILEAI_ADS.addToChrome)">Add to Chrome</a>
     <a class="btn ghost" href="upgrade/">See Pro</a>
     <a class="btn ghost" href="privacy/">Privacy policy</a>
   </div>
