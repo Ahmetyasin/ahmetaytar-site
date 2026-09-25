@@ -1,6 +1,6 @@
 {
-  "version": 20,
-  "updated": "2026-09-18",
+  "version": 21,
+  "updated": "2026-09-25",
   "platforms": {
     "perplexity": {
       "streamingSelector": null,
@@ -25,6 +25,7 @@
         "/rest/sse/perplexity_ask"
       ],
       "userMessageSelectors": [
+        ".group\\/user-bubble [class*=\"max-h-\"]",
         ".group\\/user-bubble .whitespace-pre-line",
         "[class*=\"user-bubble\"] .whitespace-pre-line",
         ".whitespace-pre-line"
