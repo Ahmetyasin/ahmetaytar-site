@@ -59,7 +59,7 @@
       same prompt, each in its own tab, one at a time, at human pace.</p></div>
     <div class="benefit"><span class="k">Wait less</span><b>Go and do something else</b>
       <p>The popup lists every answer that landed while you were elsewhere, the
-      toolbar icon counts them, and a chime is one switch away.</p></div>
+      toolbar icon counts them, and a chime and a notification tell you.</p></div>
     <div class="benefit"><span class="k">Know</span><b>See what your AI time buys</b>
       <p>Writing, waiting and reading time per AI, which one is fastest on your
       own prompts, and which subscription you are paying for but not using.</p></div>
@@ -89,7 +89,7 @@
     <div class="step"><b>04</b><div>
       <h3>Compare, and keep going</h3>
       <p>Type the next prompt whenever you like. If an AI is still answering,
-      yours waits in the queue instead of colliding with it.</p>
+      it does not get the new one, and WhileAI tells you which AI missed it.</p>
     </div></div>
   </div>
 
@@ -99,9 +99,8 @@
     </figure>
     <div class="panelcopy">
       <h3>The whole interface is this panel</h3>
-      <p>One switch per AI. "ready" means that tab is signed in and can receive
-      a prompt; if a site signs you out or hits a limit, the panel says so by
-      name, so a prompt never disappears quietly.</p>
+      <p>One switch per AI. If a prompt does not get through to one of them,
+      the panel says which AI missed it, so a prompt never disappears quietly.</p>
       <p>There is no new chat window to learn. You keep using ChatGPT, Claude
       and the rest exactly as they are, with their files, projects and modes.</p>
     </div>
@@ -117,7 +116,7 @@
     <img src="img/notify.png" alt="The Answers ready list in the WhileAI popup: Claude has answered, ready after 48 seconds; Gemini has answered; ChatGPT has answered. Beside it, the toolbar icon with a green 3." width="1200" height="470">
     <figcaption>Each answer that lands while you are elsewhere is listed at the bottom
     of the popup, and counted on the toolbar icon. Click one and you are in that
-    conversation. A short chime for each answer is an optional switch.
+    conversation. A short chime and a notification come with each answer, under one switch.
     Nothing is listed for an answer you were already looking at.</figcaption>
   </figure>
 </section>
@@ -176,7 +175,7 @@
 
 <section id="pricing">
   <h2>Free to use. Pro for the analysis.</h2>
-  <p class="sub">Sending prompts, the queue, the answers-ready list and the basic
+  <p class="sub">Sending prompts, the answers-ready list and the basic
   dashboard are free, with no time limit and no cap on prompts. The free plan
   sends each prompt to two AIs at a time.</p>
 
@@ -194,15 +193,15 @@
     <div class="card">
       <h3>Free</h3>
       <p>Unlimited prompts to two AIs at a time, so one question gets you three
-      answers. A queue you can see, a switch per AI, the answers-ready list with
-      its chime, the last 7 days of your dashboard, weekly and monthly summary
-      cards, and JSON export, import and delete.</p>
+      answers. A switch per AI, the answers-ready list with its chime and
+      notification, the last 7 days of your dashboard, weekly and monthly summary
+      cards, and JSON and CSV export, import and delete.</p>
     </div>
     <div class="card">
       <h3>Pro: $5 a month, $39 a year, or $49 once</h3>
       <p>Every AI you switch on, your full history with the heatmap, what each
       subscription costs you per prompt, which AI answers first, whether that
-      answer was enough, a weekly report and your own notification rules.
+      answer was enough.
       Every install starts with 14 days of Pro, no card.</p>
     </div>
   </div>
@@ -243,9 +242,9 @@
       no pretending to be a different browser.</div></div>
     <div class="fact"><i>&#9679;</i><div><b>It does not touch your password.</b>
       You sign in yourself, in your own browser, as you already do.</div></div>
-    <div class="fact"><i>&#9679;</i><div><b>It stops and tells you.</b>
-      Signed out, rate limited, or a site is showing a verification check:
-      you hear about it rather than finding out an hour later.</div></div>
+    <div class="fact"><i>&#9679;</i><div><b>It tells you when a prompt did not get through.</b>
+      Signed out, at a limit, still answering, or showing a check: that AI
+      does not get the prompt, and you hear which one right away.</div></div>
     <div class="fact"><i>&#9679;</i><div><b>Removing it: one click.</b>
       <code>chrome://extensions</code> &rarr; WhileAI &rarr; <b>Remove</b>.
       Its stored data goes with it. Pausing is the same page's toggle.</div></div>
@@ -267,8 +266,8 @@
     <details><summary>Does it work when the AI tab is in the background, or in another window?</summary>
       <p>Yes, that is the normal case. Your prompt is delivered to tabs you are not looking at, and the answers-ready list tells you when each one has answered. Chrome slows background tabs down a great deal; WhileAI times its own steps on a clock Chrome does not slow, so a tab you have not touched for an hour still receives the prompt straight away.</p></details>
     <details><summary>How do I find out that an answer is ready?</summary>
-      <p>The WhileAI popup has an <b>Answers ready</b> list at the bottom: one line per answer that landed while you were not looking at that tab, naming the AI and how long it took. Click a line and you are in that conversation, and the line goes away. The toolbar icon shows the same count in green, up to "9+". If you also want to hear it, the dashboard has a switch for a short chime that plays once per answer, with a "Test the chime" button next to it. There is no desktop notification for an ordinary answer: the list and the count already say it, and the operating system can swallow a notification without telling anyone.</p>
-      <p>An <b>amber</b> badge means something needs you rather than something being ready: an AI signed you out, hit a limit, or is showing a verification check. Amber wins over green, because a problem is worth more of your attention than a finished answer.</p></details>
+      <p>The WhileAI popup has an <b>Answers ready</b> list at the bottom: one line per answer that landed while you were not looking at that tab, naming the AI and how long it took. Click a line and you are in that conversation, and the line goes away. The toolbar icon shows the same count in green, up to "9+". You also get a short chime and a desktop notification naming the AI (one per AI at a time; click it and you are in that tab). Both sit under one switch in the dashboard, on by default, with a "Test" button next to it. The list and the count do not depend on it, because the operating system can swallow a notification without telling anyone.</p>
+      <p>An <b>amber</b> badge means a prompt did not get through to one of your AIs (or, on the free plan, that it was meant for more AIs than the plan reaches). The popup then shows one line, "X did not get this prompt. Open the X tab: it may be signed out, still answering, at a usage limit, or showing a check." Click it to open that tab. It clears itself once a prompt reaches that AI again. Amber wins over green, because a missed prompt is worth more of your attention than a finished answer.</p></details>
     <details><summary>DeepSeek has "DeepThink" and "Search" switched on. Does my prompt go out in those modes?</summary>
       <p>No. DeepSeek remembers those two buttons from your last visit, and a slow thinking mode is rarely what you want when the same prompt is going to several AIs. Before WhileAI types a prompt there on your behalf it switches both off, the same click you would make, so the prompt goes out in the standard mode. It only does this on prompts it delivers, never while you are typing in DeepSeek yourself.</p></details>
     <details><summary>Will it send my prompt to an AI I switched off?</summary>
@@ -287,7 +286,7 @@
     <details><summary>Does it use my API keys or my passwords?</summary>
       <p>Neither. It works inside the tabs you are already signed in to, the same way you would: it puts the text in the box and presses send. It never sees a password, and there is nothing to configure.</p></details>
     <details><summary>Is this allowed by the AI sites?</summary>
-      <p>WhileAI does by machine what you would do by hand in your own account, one prompt at a time, at human pace. It does not solve CAPTCHAs, get around usage limits or hide what it is. When a site puts up a check or a limit, it stops and tells you. Each provider's terms are still yours to follow, and none of them is affiliated with WhileAI.</p></details>
+      <p>WhileAI does by machine what you would do by hand in your own account, one prompt at a time, at human pace. It does not solve CAPTCHAs, get around usage limits or hide what it is. When a site puts up a check or a limit, that AI does not get the prompt and WhileAI tells you. Each provider's terms are still yours to follow, and none of them is affiliated with WhileAI.</p></details>
     <details><summary>How much does it cost?</summary>
       <p>Using it is free: unlimited prompts to two AIs at a time, with the answers-ready list and the 7-day dashboard. <a href="upgrade/">Pro</a> is $5 a month, $39 a year or $49 once, and adds every AI you switch on, plus the analysis. Every install starts with 14 days of Pro, no card.</p></details>
   </div>

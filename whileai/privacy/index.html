@@ -19,7 +19,7 @@
 <div class="wrap prose">
 
   <h1 style="font-size:38px">Privacy policy</h1>
-  <p class="updated">WhileAI browser extension and this website. Last updated 23 September 2026.</p>
+  <p class="updated">WhileAI browser extension and this website. Last updated 25 September 2026.</p>
 
   <p style="margin-top:22px">WhileAI never reads the AI's answers. Your prompts
   and timings stay in your browser. There is no account and no analytics.
@@ -44,9 +44,9 @@
     page address, such as <code>c/68a1f3de</code>, so the dashboard can tell
     you how many follow-ups an answer needed. A readable address, a page title
     or a search term is never stored.</li>
-    <li><strong>Your settings.</strong> Which AIs you switched on, whether ready
-    answers are counted on the toolbar icon and whether the chime plays, your
-    notification rules, how long records are kept, and, if you use the
+    <li><strong>Your settings.</strong> Which AIs you switched on, whether the
+    chime and notification for each answer are on, how long records are kept,
+    and, if you use the
     subscription panel, the monthly prices you typed in. Those prices never
     leave your computer.</li>
     <li><strong>Your prompt text, briefly.</strong> It is held only while it is
@@ -135,10 +135,10 @@
     <li><strong>alarms</strong> — wakes the extension to check whether an
     answer has finished. Chrome stops an idle extension, so without this a
     long answer would never be timed.</li>
-    <li><strong>notifications</strong> — tells you when an AI needs you:
-    signed out, out of quota, or showing a verification check. Also delivers
-    the weekly report on Pro. There is no notification for an ordinary
-    answer.</li>
+    <li><strong>notifications</strong> — tells you when an answer lands in a
+    tab you are not looking at (one per AI, and one switch turns it off), and
+    when a prompt did not get through to one of your AIs. No notification
+    contains your prompt or an answer.</li>
     <li><strong>tabs</strong> — finds the tab for each AI you picked, so your
     prompt goes to the session you are already using instead of opening a
     duplicate. It reads the address only, to tell one AI's tab from
@@ -151,7 +151,7 @@
     the extension learns the page changed.</li>
     <li><strong>tabGroups</strong> — puts the tabs it opens into one named
     group, so you can see which tabs are its and close them together.</li>
-    <li><strong>offscreen</strong> — plays the optional chime. An extension's
+    <li><strong>offscreen</strong> — plays the chime for each answer. An extension's
     background worker cannot play a sound, so Chrome requires a hidden page
     while it plays; it is created when needed and closed a few seconds after
     the last chime.</li>
@@ -180,8 +180,8 @@
   banner is shown. There is no other analytics on this site.</p>
 
   <h2>Your data is yours</h2>
-  <p>The dashboard can export everything as JSON on every plan (CSV is part of
-  Pro), import it on another computer, and delete everything at once. Removing
+  <p>The dashboard can export everything as JSON or CSV on every plan, import
+  it on another computer, and delete everything at once. Removing
   the extension removes its storage with it.</p>
 
   <h2>If you buy Pro</h2>
