@@ -35,9 +35,23 @@
   <span>&copy; 2026 Ahmet Aytar</span>
   <a href="/">Home</a>
   <a href="../privacy/">Privacy</a>
-  <span class="spacer">Chrome opens this page once on removal. Only the version number travelled with it. <a href="../privacy/#website">Details</a>.</span>
+  <span class="spacer">Chrome opens this page once on removal. Only the version number travelled with it; the page counts the removal once (version and country, no cookie, no id). <a href="../privacy/#website">Details</a>.</span>
 </div></footer>
 
+<script>
+// One count per page open: install or removal, the version, nothing else.
+// The country is added by the server. No cookie, no id. See ../privacy/#website.
+(function () {
+  try {
+    if (sessionStorage.getItem('whileai_counted_uninstall')) return;
+    sessionStorage.setItem('whileai_counted_uninstall', '1');
+  } catch (e) {}
+  try {
+    var v = new URLSearchParams(location.search).get('v') || '';
+    navigator.sendBeacon('/whileai/brief/count', JSON.stringify({ e: 'uninstall', v: v }));
+  } catch (e) {}
+})();
+</script>
 <script src="../ads.js"></script>
 <script>whileaiConversion(WHILEAI_ADS.uninstall);</script>
 </body>
