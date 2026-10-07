@@ -9,6 +9,19 @@
 <link rel="stylesheet" href="../../style.css">
 <link rel="icon" href="../img/icon.png">
 <link rel="canonical" href="https://ahmetaytar.com/whileai/goodbye/">
+<style>
+.why { padding-top: 8px; border-top: 0; }
+.why h2 { font-size: 22px; }
+.why .reasons { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; }
+.why .reasons button, .why #why-send { font: inherit; font-size: 15.5px; cursor: pointer; border-radius: 10px;
+  padding: 10px 14px; background: transparent; color: var(--text); border: 1px solid var(--line); }
+.why .reasons button:hover, .why #why-send:hover { border-color: var(--accent); }
+.why .reasons button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+.why textarea { display: block; width: 100%; max-width: 560px; margin-top: 16px; min-height: 90px; font: inherit;
+  font-size: 15.5px; color: var(--text); background: transparent; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+.why #why-send { margin-top: 10px; }
+.why .thanks { margin-top: 16px; color: var(--accent); }
+</style>
 </head>
 <body>
 
@@ -24,9 +37,27 @@
   <h1>WhileAI is gone from this browser.</h1>
   <p class="lede">Everything it stored went with it. Nothing about you was
   kept anywhere else, so there is nothing to delete on this side.</p>
-  <p class="note">If it got in the way, broke, or just was not useful, one
-  line to <a href="mailto:aytarahmetyasin@gmail.com?subject=Why%20I%20removed%20WhileAI">aytarahmetyasin@gmail.com</a>
-  is the most useful thing you could send. No form, no survey.</p>
+</section>
+
+<section class="why" id="why">
+  <h2>Why did you remove it?</h2>
+  <p class="note">One click is enough. It goes only to me, the developer, with
+  the version number and your country. Nothing is sent unless you click.</p>
+  <div class="reasons">
+    <button type="button" data-r="broke" aria-pressed="false">It didn't work on a site I use</button>
+    <button type="button" data-r="not_needed" aria-pressed="false">I didn't need it</button>
+    <button type="button" data-r="too_much" aria-pressed="false">Too many tabs, too much going on</button>
+    <button type="button" data-r="price" aria-pressed="false">The Pro plan or the price</button>
+    <button type="button" data-r="privacy" aria-pressed="false">A privacy worry</button>
+    <button type="button" data-r="other" aria-pressed="false">Something else</button>
+  </div>
+  <p class="thanks" id="why-thanks" hidden>Thank you.</p>
+  <div id="why-more" hidden>
+    <textarea id="why-text" maxlength="500" placeholder="Anything to add? What would have made you keep it? (optional; please leave out names and email addresses)"></textarea>
+    <button type="button" id="why-send">Send</button>
+  </div>
+  <p class="note" style="margin-top:22px">Or write to me:
+  <a href="mailto:aytarahmetyasin@gmail.com?subject=Why%20I%20removed%20WhileAI">aytarahmetyasin@gmail.com</a>.</p>
 </section>
 
 </div>
@@ -35,7 +66,7 @@
   <span>&copy; 2026 Ahmet Aytar</span>
   <a href="/">Home</a>
   <a href="../privacy/">Privacy</a>
-  <span class="spacer">Chrome opens this page once on removal. Only the version number travelled with it; the page counts the removal once (version and country, no cookie, no id). <a href="../privacy/#website">Details</a>.</span>
+  <span class="spacer">Chrome opens this page once on removal. Only the version number travelled with it; the page counts the removal once (version and country, no cookie, no id) and sends a reason only if you click one. <a href="../privacy/#website">Details</a>.</span>
 </div></footer>
 
 <script>
@@ -50,6 +81,41 @@
     var v = new URLSearchParams(location.search).get('v') || '';
     navigator.sendBeacon('/whileai/brief/count', JSON.stringify({ e: 'uninstall', v: v }));
   } catch (e) {}
+})();
+</script>
+<script>
+// "Why did you remove it?": a click sends the reason at once; the optional
+// note follows with the same random page id so the two arrive together.
+(function () {
+  var box = document.getElementById('why');
+  if (!box || !window.fetch) return;
+  var bytes = new Uint8Array(8);
+  crypto.getRandomValues(bytes);
+  var id = Array.prototype.map.call(bytes, function (b) { return ('0' + b.toString(16)).slice(-2); }).join('');
+  var v = new URLSearchParams(location.search).get('v') || '';
+  function send(body) {
+    body.id = id; body.v = v;
+    try {
+      fetch('/whileai/brief/feedback', { method: 'POST', headers: { 'content-type': 'text/plain' },
+        body: JSON.stringify(body), keepalive: true }).catch(function () {});
+    } catch (e) {}
+  }
+  var buttons = box.querySelectorAll('[data-r]');
+  Array.prototype.forEach.call(buttons, function (b) {
+    b.addEventListener('click', function () {
+      Array.prototype.forEach.call(buttons, function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      send({ r: b.getAttribute('data-r') });
+      document.getElementById('why-thanks').hidden = false;
+      document.getElementById('why-more').hidden = false;
+    });
+  });
+  document.getElementById('why-send').addEventListener('click', function () {
+    var t = document.getElementById('why-text').value.trim();
+    if (!t) return;
+    send({ t: t });
+    document.getElementById('why-more').hidden = true;
+    document.getElementById('why-thanks').textContent = 'Thank you. That is all.';
+  });
 })();
 </script>
 <script src="../ads.js"></script>
