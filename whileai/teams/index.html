@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WhileAI for Teams: see which AI tools your team uses and pays for</title>
+<meta name="description" content="A browser extension your admin installs once. See which AI tools your team opens, which paid seats nobody uses, and who gets value. It never reads a prompt or an answer.">
+<link rel="stylesheet" href="../../style.css">
+<link rel="icon" href="../img/icon.png">
+<link rel="canonical" href="https://ahmetaytar.com/whileai/teams/">
+<meta property="og:title" content="WhileAI for Teams: which AI tools does your team use, and which seats go unused?">
+<meta property="og:description" content="Installed once by your admin. Tools in use, seats going to waste, adoption by team. Prompts and answers are never read.">
+<meta property="og:url" content="https://ahmetaytar.com/whileai/teams/">
+<style>
+/* Example report: drawn in HTML so it stays sharp and is clearly a sketch. */
+.report { margin-top: 30px; background: var(--raise); border: 1px solid var(--line); border-radius: 14px; padding: 22px 22px 18px; }
+.report .head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.report .head b { font-size: 17px; }
+.report .head span { font-size: 13px; color: var(--dim); }
+.report .tiles { margin-top: 16px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.report .tile { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.report .tile b { display: block; font-size: 24px; letter-spacing: -.02em; }
+.report .tile span { font-size: 13px; color: var(--muted); }
+.report .tile.warn b { color: var(--accent); }
+.report table { width: 100%; margin-top: 16px; border-collapse: collapse; font-size: 14.5px; }
+.report th { text-align: left; font-weight: 500; color: var(--dim); font-size: 12.5px; padding: 6px 8px; border-bottom: 1px solid var(--line); }
+.report td { padding: 8px; border-bottom: 1px solid var(--line); color: var(--muted); }
+.report td:first-child { color: var(--text); }
+.report tr:last-child td { border-bottom: 0; }
+.tag { font-size: 12px; border-radius: 6px; padding: 2px 7px; border: 1px solid var(--line); white-space: nowrap; }
+.tag.ok { color: #9CC69B; border-color: #3B5139; }
+.tag.no { color: var(--accent); border-color: #5A3418; }
+.bar { display: inline-block; height: 7px; border-radius: 4px; background: var(--accent); vertical-align: middle; opacity: .8; }
+.report .foot { margin-top: 12px; font-size: 13px; color: var(--dim); }
+@media (max-width: 720px) {
+  .report { padding: 16px 12px 14px; }
+  .report .tiles { grid-template-columns: repeat(2, 1fr); }
+  .report .hide-sm { display: none; }
+  .report table { font-size: 13px; }
+  .report th, .report td { padding: 7px 4px; }
+  .tag { font-size: 11px; padding: 1px 5px; white-space: normal; }
+}
+/* Form */
+.join form { margin-top: 26px; display: grid; gap: 16px; max-width: 560px; }
+.join label { display: grid; gap: 6px; font-size: 15px; color: var(--muted); }
+.join label b { color: var(--text); font-weight: 600; }
+.join input[type=email], .join input[type=text], .join select, .join textarea {
+  font: inherit; font-size: 16px; color: var(--text); background: transparent;
+  border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; width: 100%; }
+.join select { appearance: auto; }
+.join select option { background: var(--raise); color: var(--text); }
+.join textarea { min-height: 90px; }
+.join input:focus, .join select:focus, .join textarea:focus { outline: none; border-color: var(--accent); }
+.join fieldset { border: 0; display: grid; gap: 8px; }
+.join legend { font-size: 15px; color: var(--muted); margin-bottom: 4px; }
+.join legend b { color: var(--text); font-weight: 600; }
+.join .choice { display: flex; gap: 10px; align-items: flex-start; font-size: 15.5px; color: var(--muted); }
+.join .choice input { margin-top: 5px; accent-color: var(--accent); }
+.join .pilot { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.join .pilot b { color: var(--text); }
+.join .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.join button { font: inherit; font-weight: 600; cursor: pointer; border: 0; border-radius: 10px;
+  padding: 12px 18px; background: var(--accent); color: #140F09; justify-self: start; }
+.join button[disabled] { opacity: .6; cursor: default; }
+.join .msg { font-size: 15.5px; }
+.join .msg.ok { color: var(--accent); }
+.join .msg.err { color: #E07A6B; }
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="/whileai/teams/"><img src="../img/icon.png" alt="">WhileAI for Teams</a>
+  <nav><a href="#reports">What you get</a><a href="#how">How it works</a><a href="#never">What it never does</a><a href="#join">Early access</a></nav>
+</div></header>
+
+<div class="wrap">
+
+<section class="hero plain">
+  <div class="eyebrow">Early access · for teams of 10 to 200</div>
+  <h1>Which AI tools does your team use, and which seats go unused?</h1>
+  <p class="lede">A browser extension your admin installs for everyone, once. It
+  records which AI tools are opened and for how long. It never reads a prompt,
+  an answer or a file. You get one report: the tools in use, the seats you pay
+  for that nobody opens, and who is getting value.</p>
+  <div class="actions">
+    <a class="btn" href="#join">Join early access</a>
+    <span class="note">Built with the first five teams. Planned price: $5 per person a month.</span>
+  </div>
+</section>
+
+<section id="reports">
+  <h2>Three questions, answered every week</h2>
+  <p class="sub">Most teams already pay for AI, often several times over, and
+  nobody can say who uses what.</p>
+  <div class="cards">
+    <div class="card"><h3>Which AI tools are in use?</h3>
+      <p>Every AI site opened in your team's browsers: ChatGPT, Claude, Gemini,
+      Copilot, Perplexity, DeepSeek and the long tail. How many people use each,
+      and how often. Mark the ones you approve; the rest stand out.</p></div>
+    <div class="card"><h3>Which seats go unused?</h3>
+      <p>Enter the seats you pay for. See who has not opened their tool this
+      month, and who keeps using a tool you have no seat for, usually on a
+      personal account or paying out of their own pocket.</p></div>
+    <div class="card"><h3>Who is getting value?</h3>
+      <p>Active people and AI time per team, week by week. Find the people who
+      use it well and the teams that have not started, before you buy more.</p></div>
+    <div class="card"><h3>Without watching anyone's work</h3>
+      <p>Only timing leaves the browser: which AI site, when, for how long.
+      Never what was typed, what the AI answered, or which files were shared.</p></div>
+  </div>
+
+  <div class="report" aria-label="Example report with made-up data">
+    <div class="head"><b>AI at Example Co. · September</b><span>Example with made-up numbers</span></div>
+    <div class="tiles">
+      <div class="tile"><b>34 / 41</b><span>people used AI</span></div>
+      <div class="tile"><b>7</b><span>AI tools in use</span></div>
+      <div class="tile warn"><b>6</b><span>paid seats not opened</span></div>
+      <div class="tile warn"><b>9</b><span>people on tools with no seat</span></div>
+    </div>
+    <table>
+      <tr><th>Tool</th><th>People</th><th class="hide-sm">Time this month</th><th>Seats</th><th>Status</th></tr>
+      <tr><td>ChatGPT</td><td>27</td><td class="hide-sm"><span class="bar" style="width:90px"></span> 61 h</td><td>20 paid · 6 unused</td><td><span class="tag ok">approved</span></td></tr>
+      <tr><td>Claude</td><td>11</td><td class="hide-sm"><span class="bar" style="width:46px"></span> 31 h</td><td>none</td><td><span class="tag no">not approved</span></td></tr>
+      <tr><td>Gemini</td><td>8</td><td class="hide-sm"><span class="bar" style="width:20px"></span> 9 h</td><td>in Workspace</td><td><span class="tag ok">approved</span></td></tr>
+      <tr><td>Perplexity</td><td>5</td><td class="hide-sm"><span class="bar" style="width:10px"></span> 4 h</td><td>none</td><td><span class="tag no">not approved</span></td></tr>
+      <tr><td>DeepSeek</td><td>2</td><td class="hide-sm"><span class="bar" style="width:4px"></span> 1 h</td><td>none</td><td><span class="tag no">not approved</span></td></tr>
+    </table>
+    <p class="foot">A sketch of the planned report. The team product is not built yet; early-access teams decide what goes in it.</p>
+  </div>
+</section>
+
+<section id="how">
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="step"><b>01</b><div>
+      <h3>Your admin installs it for everyone</h3>
+      <p>Through the Google Admin console or Microsoft Intune, in Chrome and
+      Edge. About ten minutes, no change to anyone's accounts.</p>
+    </div></div>
+    <div class="step"><b>02</b><div>
+      <h3>Everyone is told what is measured</h3>
+      <p>A short notice explains it: which AI sites, when and for how long.
+      Nothing about content.</p>
+    </div></div>
+    <div class="step"><b>03</b><div>
+      <h3>You get the report</h3>
+      <p>A dashboard and a weekly email: tools in use, unused seats, adoption by
+      team.</p>
+    </div></div>
+  </div>
+</section>
+
+<section id="never">
+  <h2>What it never does, and what it cannot see yet</h2>
+  <div class="facts">
+    <div class="fact"><i>✕</i><span><b>It never reads prompts, answers or files.</b> Only which AI site, when and for how long.</span></div>
+    <div class="fact"><i>✕</i><span><b>It never blocks or slows a tool.</b> It reports; your policy stays yours.</span></div>
+    <div class="fact"><i>✕</i><span><b>No screenshots, no keystroke logging.</b></span></div>
+    <div class="fact"><i>–</i><span><b>Not covered yet:</b> desktop apps (the ChatGPT and Claude apps), phones, and direct API use. If you need those, say so in the form.</span></div>
+  </div>
+</section>
+
+<section id="join" class="join">
+  <h2>Join early access</h2>
+  <p class="sub">I am building the team version with the first five teams.
+  Tell me a little about yours and I will reply by email.</p>
+  <form id="teams-form" novalidate>
+    <label><b>Work email</b>
+      <input type="email" name="email" required autocomplete="email" placeholder="you@company.com"></label>
+    <label><b>Company</b>
+      <input type="text" name="company" maxlength="100" autocomplete="organization"></label>
+    <label><b>Team size</b>
+      <select name="size">
+        <option value="">Choose</option>
+        <option value="s">1–10</option>
+        <option value="m">11–50</option>
+        <option value="l">51–200</option>
+        <option value="xl">More than 200</option>
+      </select></label>
+    <fieldset>
+      <legend><b>What matters most to you?</b></legend>
+      <label class="choice"><input type="radio" name="focus" value="spend"> What we spend on AI, and seats nobody uses</label>
+      <label class="choice"><input type="radio" name="focus" value="security"> AI tools we have not approved</label>
+      <label class="choice"><input type="radio" name="focus" value="adoption"> Whether people actually use the AI we bought</label>
+      <label class="choice"><input type="radio" name="focus" value="other"> Something else (tell me below)</label>
+    </fieldset>
+    <label class="choice pilot"><input type="checkbox" name="pilot">
+      <span><b>We would join a paid pilot.</b> The first month is free; after that $5 per person a month, cancel any time.</span></label>
+    <label><b>Anything else?</b>
+      <textarea name="note" maxlength="500" placeholder="How many people, which AI tools you pay for, what you would want to see"></textarea></label>
+    <label class="hp" aria-hidden="true">Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+    <button type="submit">Send</button>
+    <p class="msg" id="teams-msg" role="status"></p>
+    <p class="note">Your email and answers go only to me, to reply to you, and
+    are deleted after a year. <a href="../privacy/#teams">Details</a>.</p>
+  </form>
+</section>
+
+<section id="questions">
+  <h2>Questions</h2>
+  <div class="faq">
+    <details><summary>Is this built?</summary>
+      <p>Not as a team product yet. The part that measures AI time without
+      reading content already runs in WhileAI's personal Chrome extension. The
+      team dashboard, the admin install and the weekly report are what the first
+      five teams will shape. That is why it is early access.</p></details>
+    <details><summary>Will managers see individuals or only team totals?</summary>
+      <p>That is one of the things I want to settle with the first teams. Tell
+      me in the form which you would want, and which your people would accept.</p></details>
+    <details><summary>Who is behind it?</summary>
+      <p>Ahmet Aytar, an independent developer in Istanbul. One person, so you
+      will be talking to whoever writes the code.</p></details>
+    <details><summary>What will it cost?</summary>
+      <p>The plan is $5 per person a month. Early-access teams get the first
+      month free and keep their price.</p></details>
+  </div>
+</section>
+
+</div>
+
+<footer><div class="wrap">
+  <span>&copy; 2026 Ahmet Aytar</span>
+  <a href="/">Home</a>
+  <a href="../privacy/#teams">Privacy</a>
+  <a href="mailto:ahmet@ahmetaytar.com?subject=WhileAI%20for%20Teams">ahmet@ahmetaytar.com</a>
+</div></footer>
+
+<script>
+// Early-access form: one POST to the same site, which forwards it to me.
+// No cookie and no tracker on this page.
+(function () {
+  var form = document.getElementById('teams-form');
+  var msg = document.getElementById('teams-msg');
+  if (!form || !window.fetch) return;
+  var bytes = new Uint8Array(8);
+  crypto.getRandomValues(bytes);
+  var id = Array.prototype.map.call(bytes, function (b) { return ('0' + b.toString(16)).slice(-2); }).join('');
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var f = form.elements;
+    var email = f.email.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+      msg.className = 'msg err';
+      msg.textContent = 'Please enter your work email.';
+      f.email.focus();
+      return;
+    }
+    var focus = form.querySelector('input[name=focus]:checked');
+    var body = {
+      id: id, email: email, company: f.company.value, size: f.size.value,
+      focus: focus ? focus.value : '', pilot: f.pilot.checked, note: f.note.value, website: f.website.value
+    };
+    var btn = form.querySelector('button');
+    btn.disabled = true;
+    msg.className = 'msg';
+    msg.textContent = 'Sending…';
+    fetch('/whileai/brief/teams', { method: 'POST', headers: { 'content-type': 'text/plain' }, body: JSON.stringify(body) })
+      .then(function (r) {
+        if (!r.ok) throw new Error(String(r.status));
+        msg.className = 'msg ok';
+        msg.textContent = 'Thank you. I will reply to ' + email + ' by email.';
+        Array.prototype.forEach.call(form.querySelectorAll('input, select, textarea'), function (el) { el.disabled = true; });
+      })
+      .catch(function () {
+        btn.disabled = false;
+        msg.className = 'msg err';
+        msg.textContent = 'That did not go through. Please try again, or write to ahmet@ahmetaytar.com.';
+      });
+  });
+})();
+</script>
+</body>
+</html>
