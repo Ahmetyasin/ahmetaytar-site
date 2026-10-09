@@ -32,7 +32,7 @@
   accounts you already have. Then it tells you when each answer is in.</p>
   <div class="actions">
     <a class="btn" href="https://chromewebstore.google.com/detail/jkemgnopkjenepaohooaghojmoabplmp">Add to Chrome</a>
-    <span class="note">Free. No account, no API keys. 14 days of Pro included.</span>
+    <span class="note">Free, every feature. No account, no API keys.</span>
   </div>
   <div class="chips"><em>Works with</em><span>ChatGPT</span><span>Claude</span><span>Gemini</span><span>Perplexity</span><span>DeepSeek</span></div>
 
@@ -134,7 +134,7 @@
 
   <figure>
     <img src="img/daily.png" alt="A bar chart of waiting time per day, coloured by AI, above a table of answers, waiting time and total time for each AI." width="1200" height="747">
-    <figcaption>Day by day, and AI by AI. This much is free, for the last 7 days.</figcaption>
+    <figcaption>Day by day, and AI by AI, over your whole history.</figcaption>
   </figure>
 </section>
 
@@ -169,19 +169,18 @@
   </div>
 
   <p class="fine">Follow-up counts, the head to head, the heatmap and the
-  subscription costs are part of <a href="upgrade/">Pro</a>. The three-phase
-  card, the daily chart and the per-AI totals are free for the last 7 days.</p>
+  subscription costs are all included, like everything else.</p>
 </section>
 
 <section id="pricing">
-  <h2>Free to use. Pro for the analysis.</h2>
-  <p class="sub">Sending prompts, the answers-ready list and the basic
-  dashboard are free, with no time limit and no cap on prompts. The free plan
-  sends each prompt to two AIs at a time.</p>
+  <h2>Free. Every feature.</h2>
+  <p class="sub">There is no paid plan. Every AI you switch on, your whole
+  history, what each subscription costs you and every comparison are
+  included, with no time limit and no cap on prompts.</p>
 
   <figure>
-    <img src="img/pro.png" alt="The Pro subscription panel: four AI subscriptions at 20 dollars each with cost per prompt and per hour of use, and a line saying Perplexity costs 20 dollars a month and was sent 2 prompts." width="1200" height="468">
-    <figcaption>Pro answers the question that pays for it: which subscription are you not using?</figcaption>
+    <img src="img/pro.png" alt="The subscription panel: four AI subscriptions at 20 dollars each with cost per prompt and per hour of use, and a line saying Perplexity costs 20 dollars a month and was sent 2 prompts." width="1200" height="468">
+    <figcaption>The question it answers: which subscription are you not using?</figcaption>
   </figure>
 
   <figure>
@@ -189,27 +188,9 @@
     <figcaption>And the other one: which AI is actually fastest on the prompts you sent to several at once, and when in the week your waiting piles up.</figcaption>
   </figure>
 
-  <div class="cards">
-    <div class="card">
-      <h3>Free</h3>
-      <p>Unlimited prompts to two AIs at a time, so one question gets you three
-      answers. A switch per AI, the answers-ready list with its chime and
-      notification, the last 7 days of your dashboard, weekly and monthly summary
-      cards, and JSON and CSV export, import and delete.</p>
-    </div>
-    <div class="card">
-      <h3>Pro: $5 a month, $39 a year, or $49 once</h3>
-      <p>Every AI you switch on, your full history with the heatmap, what each
-      subscription costs you per prompt, which AI answers first, whether that
-      answer was enough.
-      Every install starts with 14 days of Pro, no card.</p>
-    </div>
-  </div>
-
   <div class="actions" style="margin-top:26px">
     <a class="btn" href="https://chromewebstore.google.com/detail/jkemgnopkjenepaohooaghojmoabplmp">Add to Chrome</a>
-    <a class="btn ghost" href="upgrade/">Compare Free and Pro</a>
-    <span class="note">Nothing is deleted to enforce the free plan. Upgrade and your whole history is there.</span>
+    <span class="note">No account, no API keys, no card.</span>
   </div>
 </section>
 
@@ -267,11 +248,11 @@
       <p>Yes, that is the normal case. Your prompt is delivered to tabs you are not looking at, and the answers-ready list tells you when each one has answered. Chrome slows background tabs down a great deal; WhileAI times its own steps on a clock Chrome does not slow, so a tab you have not touched for an hour still receives the prompt straight away.</p></details>
     <details><summary>How do I find out that an answer is ready?</summary>
       <p>The WhileAI popup has an <b>Answers ready</b> list at the bottom: one line per answer that landed while you were not looking at that tab, naming the AI and how long it took. Click a line and you are in that conversation, and the line goes away. The toolbar icon shows the same count in green, up to "9+". You also get a short chime and a desktop notification naming the AI (one per AI at a time; click it and you are in that tab). Both sit under one switch in the dashboard, on by default, with a "Test" button next to it. The list and the count do not depend on it, because the operating system can swallow a notification without telling anyone.</p>
-      <p>An <b>amber</b> badge means a prompt did not get through to one of your AIs (or, on the free plan, that it was meant for more AIs than the plan reaches). The popup then shows one line, "X did not get this prompt. Open the X tab: it may be signed out, still answering, at a usage limit, or showing a check." Click it to open that tab. It clears itself once a prompt reaches that AI again. Amber wins over green, because a missed prompt is worth more of your attention than a finished answer.</p></details>
+      <p>An <b>amber</b> badge means a prompt did not get through to one of your AIs. The popup then shows one line, "X did not get this prompt. Open the X tab: it may be signed out, still answering, at a usage limit, or showing a check." Click it to open that tab. It clears itself once a prompt reaches that AI again. Amber wins over green, because a missed prompt is worth more of your attention than a finished answer.</p></details>
     <details><summary>DeepSeek has "DeepThink" and "Search" switched on. Does my prompt go out in those modes?</summary>
       <p>No. DeepSeek remembers those two buttons from your last visit, and a slow thinking mode is rarely what you want when the same prompt is going to several AIs. Before WhileAI types a prompt there on your behalf it switches both off, the same click you would make, so the prompt goes out in the standard mode. It only does this on prompts it delivers, never while you are typing in DeepSeek yourself.</p></details>
     <details><summary>Will it send my prompt to an AI I switched off?</summary>
-      <p>No. There is one switch per AI and an AI that is off receives nothing. Closing an AI's tab switches it off too. On the free plan a prompt reaches two other AIs at a time; if you switched on more, a notice tells you by name which ones were left out.</p></details>
+      <p>No. There is one switch per AI and an AI that is off receives nothing. Closing an AI's tab switches it off too.</p></details>
     <details><summary>What do writing, waiting and reading time mean, and how can it know?</summary>
       <p>Writing is the time keys are being pressed in the message box. Waiting is from the moment you send until the answer stops arriving. Reading is time with the tab in front, the window focused, and some sign of life from you in the last minute. All three come from timing alone. WhileAI never reads what you type or what the AI writes, and a tab left open overnight does not count as eight hours of reading.</p></details>
     <details><summary>What is "time you won back"?</summary>
@@ -288,7 +269,7 @@
     <details><summary>Is this allowed by the AI sites?</summary>
       <p>WhileAI does by machine what you would do by hand in your own account, one prompt at a time, at human pace. It does not solve CAPTCHAs, get around usage limits or hide what it is. When a site puts up a check or a limit, that AI does not get the prompt and WhileAI tells you. Each provider's terms are still yours to follow, and none of them is affiliated with WhileAI.</p></details>
     <details><summary>How much does it cost?</summary>
-      <p>Using it is free: unlimited prompts to two AIs at a time, with the answers-ready list and the 7-day dashboard. <a href="upgrade/">Pro</a> is $5 a month, $39 a year or $49 once, and adds every AI you switch on, plus the analysis. Every install starts with 14 days of Pro, no card.</p></details>
+      <p>Nothing. WhileAI is free, with every feature: every AI you switch on, your whole history and all the analysis. There is no paid plan. Anyone who bought Pro before October 2026 keeps everything, with nothing more to pay.</p></details>
   </div>
 
 </section>
@@ -297,9 +278,8 @@
   <h2>Ask once. Let every AI you pay for answer.</h2>
   <div class="actions">
     <a class="btn" href="https://chromewebstore.google.com/detail/jkemgnopkjenepaohooaghojmoabplmp">Add to Chrome</a>
-    <a class="btn ghost" href="upgrade/">See what Pro adds</a>
   </div>
-  <span class="note" style="margin-top:16px">Free, with 14 days of Pro included. No account, no API keys, nothing leaves your browser.</span>
+  <span class="note" style="margin-top:16px">Free, every feature. No account, no API keys, nothing leaves your browser.</span>
 </section>
 
 </div>
@@ -307,9 +287,6 @@
 <footer><div class="wrap">
   <span>&copy; 2026 Ahmet Aytar</span>
   <a href="/">Home</a>
-  <a href="upgrade/">Pricing</a>
-  <a href="terms/">Terms of sale</a>
-  <a href="refund/">Refunds</a>
   <a href="privacy/">Privacy</a>
   <span class="spacer">Not affiliated with OpenAI, Anthropic, Perplexity, Google or DeepSeek.</span>
 </div></footer>
